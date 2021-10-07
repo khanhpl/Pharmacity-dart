@@ -13,7 +13,7 @@ class MyHomePage extends StatelessWidget {
           children: [
             Expanded(
               child: Container(
-                margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                margin: EdgeInsets.fromLTRB(0, 20, 0, 20),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10.0),
