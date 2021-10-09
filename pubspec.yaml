@@ -89,8 +89,4 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
-  - assets/Pharmacity-Logo.png
-  - assets/slider1.webp
-  - assets/slider2.webp
-  - assets/slider3.webp
-  - assets/slider4.webp
+  - assets/
