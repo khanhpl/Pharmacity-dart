@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
-import 'screens/home/homeScrean.dart';
+import 'screens/home/home_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Pharmacity layout demo homepage'),
+      home: MyHomePage(),
     );
   }
 }
