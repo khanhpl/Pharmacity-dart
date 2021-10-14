@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import '../services/notification.dart';
 AppBar UpAppBar(context) {
   return AppBar(
     backgroundColor: Colors.blue[700],
@@ -33,11 +33,15 @@ AppBar UpAppBar(context) {
     actions: <Widget>[
       IconButton(
         icon: Icon(Icons.notifications_active_outlined),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, '/notification');
+        },
       ),
       IconButton(
         icon: Icon(Icons.shopping_cart_outlined),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, '/shoppingCart');
+        },
       ),
     ],
   );

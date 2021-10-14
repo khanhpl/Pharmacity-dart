@@ -1,126 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'screens/home/home_screen.dart';
+import 'screens/services/notification.dart';
+import 'screens/services/shopping_cart.dart';
+import 'screens/services/phouse_system/phouse_system.dart';
+import 'screens/home/main_page.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Pharmacity Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(),
-    );
-  }
-}
-
-// class MyHomePage extends StatelessWidget {
-//   MyHomePage({Key? key, required this.title}) : super(key: key);
-//   final String title;
+// void main() => runApp(MyApp());
 //
+// class MyApp extends StatelessWidget {
 //   @override
 //   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Row(
-//           children: [
-//             Expanded(
-//               child: Container(
-//                 margin: EdgeInsets.fromLTRB(0, 10, 0, 10),
-//                 decoration: BoxDecoration(
-//                   color: Colors.white,
-//                   borderRadius: BorderRadius.circular(10.0),
-//                 ),
-//                 child: Row(
-//                   children: [
-//                     IconButton(
-//                       color: Colors.grey,
-//                       onPressed: () {},
-//                       icon: Icon(Icons.search),
-//                     ),
-//                     Expanded(
-//                       child: TextField(
-//                         decoration: InputDecoration(
-//                           hintText: 'Tìm trên Pharmacity',
-//                         ),
-//                       ),
-//                     ),
-//                   ],
-//                 ),
-//               ),
-//             ),
-//             IconButton(
-//               onPressed: () {},
-//               icon: Icon(Icons.notifications),
-//               color: Colors.white,
-//             ),
-//             IconButton(
-//               onPressed: () {},
-//               icon: Icon(Icons.shopping_basket),
-//               color: Colors.white,
-//             ),
-//           ],
+//     return MaterialApp(
+//         title: 'Pharmacity Demo',
+//         theme: ThemeData(
+//           primarySwatch: Colors.blue,
 //         ),
-//       ),
-//       body: Column(
-//         children: [
-//           Row(
-//             children: [
-//               Expanded(
-//                 child: Container(
-//                   height: 60,
-//                   margin: EdgeInsets.fromLTRB(20, 20, 20, 20),
-//                   decoration: BoxDecoration(
-//                     color: Colors.blue,
-//                     borderRadius: BorderRadius.circular(20.0),
-//                   ),
-//                   child: Row(
-//                     children: [
-//                       Image.asset("assets/Pharmacity-Logo.png"),
-//                       Expanded(
-//                         child: Text(
-//                           '635 nhà thuốc trên toàn quốc',
-//                           style: TextStyle(
-//                             color: Colors.white,
-//                           ),
-//                         ),
-//                       ),
-//                     ],
-//                   ),
-//                 ),
-//               ),
-//             ],
-//           ),
-//           Row(
-//             children: [
-//               Container(
-//                 margin: EdgeInsets.fromLTRB(20, 20, 20, 20),
-//                 decoration: BoxDecoration(
-//                   color: Colors.white,
-//                   borderRadius: BorderRadius.circular(20.0),
-//                 ),
-//                 child: SizedBox(
-//                   height: 150.0,
-//                   width: 350.0,
-//                   child: Carousel(
-//                     images: [
-//                       ExactAssetImage("assets/slider1.webp"),
-//                       ExactAssetImage("assets/slider2.webp"),
-//                       ExactAssetImage("assets/slider3.webp"),
-//                       ExactAssetImage("assets/slider4.webp"),
-//                     ],
-//                   ),
-//                 ),
-//               ),
-//             ],
-//           )
-//         ],
-//       ),
-//     );
+//         home: MyBottomBar(),
+//         routes: <String, WidgetBuilder>{
+//           '/notification': (BuildContext context) => NotificationPage(),
+//           '/shoppingCart': (BuildContext context) => ShoppingCartPage(),
+//           '/phouseSystem': (BuildContext context) => MyPHouseSystemPage(),
+//         });
 //   }
 // }
 
-
+void main() {
+  runApp(MaterialApp(
+    initialRoute: '/',
+    routes: <String, WidgetBuilder>{
+      '/': (context) => MyMainPage(),
+      '/notification': (context) => NotificationPage(),
+      '/shoppingCart': (context) => ShoppingCartPage(),
+      '/phouseSystem': (context) => MyPHouseSystemPage(),
+    },
+  ));
+}
