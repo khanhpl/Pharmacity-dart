@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
-import 'bot_nav_nar.dart';
+import 'main_page.dart';
 import 'up_nav_bar.dart';
 
-class MyHomePage extends StatelessWidget {
+class MyHomeScreen extends StatefulWidget {
+  @override
+  HomeScreen createState() {
+    return new HomeScreen();
+  }
+}
+
+class HomeScreen extends State<MyHomeScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -42,7 +49,9 @@ class MyHomePage extends StatelessWidget {
                   ),
                   margin: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 0),
                   child: FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/phouseSystem');
+                    },
                     child: Row(
                       children: <Widget>[
                         SizedBox(width: 80),
@@ -1223,6 +1232,7 @@ class MyHomePage extends StatelessWidget {
                 Row(
                   children: [
                     Container(
+                      width: size.width * 0.6,
                       alignment: Alignment.centerLeft,
                       margin: EdgeInsets.only(
                         left: 10.0,
@@ -1236,7 +1246,7 @@ class MyHomePage extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      width: 200,
+                      width: size.width * 0.3,
                       alignment: Alignment.centerRight,
                       child: GestureDetector(
                         onTap: () {
@@ -1251,7 +1261,6 @@ class MyHomePage extends StatelessWidget {
                         ),
                       ),
                     ),
-
                   ],
                 ),
                 SizedBox(height: 10.0),
@@ -1427,7 +1436,6 @@ class MyHomePage extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: MyBottomBar(),
       floatingActionButton: IconButton(
         icon: Icon(Icons.shopping_cart_outlined),
         onPressed: () {},
