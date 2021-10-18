@@ -896,7 +896,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                 '40.000 VND',
                                 style: TextStyle(
                                   fontSize: 15.0,
-                                  color: Colors.red,
+                                  color: Colors.grey,
                                   decoration: TextDecoration.lineThrough,
                                 ),
                               ),
@@ -1016,7 +1016,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                 '40.000 VND',
                                 style: TextStyle(
                                   fontSize: 15.0,
-                                  color: Colors.red,
+                                  color: Colors.grey,
                                   decoration: TextDecoration.lineThrough,
                                 ),
                               ),
@@ -1136,7 +1136,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                 '2.100 VND',
                                 style: TextStyle(
                                   fontSize: 15.0,
-                                  color: Colors.red,
+                                  color: Colors.grey,
                                   decoration: TextDecoration.lineThrough,
                                 ),
                               ),
@@ -1255,7 +1255,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                 '220.000 VND',
                                 style: TextStyle(
                                   fontSize: 15.0,
-                                  color: Colors.red,
+                                  color: Colors.grey,
                                   decoration: TextDecoration.lineThrough,
                                 ),
                               ),
