@@ -223,7 +223,13 @@ class HomeScreen extends State<MyHomeScreen> {
                                       ),
                                     ),
                                   ),
-                                  Text('Dược phẩm'),
+                                  Text(
+                                    'Dược phẩm',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
@@ -242,7 +248,13 @@ class HomeScreen extends State<MyHomeScreen> {
                                       ),
                                     ),
                                   ),
-                                  Text('Thực phẩm\n chức năng'),
+                                  Text(
+                                    'Thực phẩm\nchức năng',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
@@ -265,7 +277,13 @@ class HomeScreen extends State<MyHomeScreen> {
                                       ),
                                     ),
                                   ),
-                                  Text('Chăm sóc\nsức khỏe'),
+                                  Text(
+                                    'Chăm sóc\nsức khỏe',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
@@ -283,7 +301,13 @@ class HomeScreen extends State<MyHomeScreen> {
                                       ),
                                     ),
                                   ),
-                                  Text('Mẹ và Bé'),
+                                  Text(
+                                    'Mẹ và Bé',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
@@ -306,7 +330,13 @@ class HomeScreen extends State<MyHomeScreen> {
                                       ),
                                     ),
                                   ),
-                                  Text('Chăm sóc\n cá nhân'),
+                                  Text(
+                                    'Chăm sóc\ncá nhân',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
@@ -325,7 +355,13 @@ class HomeScreen extends State<MyHomeScreen> {
                                       ),
                                     ),
                                   ),
-                                  Text('Chăm sóc\n  sắc đẹp'),
+                                  Text(
+                                    'Chăm sóc\nsắc đẹp',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
@@ -348,7 +384,13 @@ class HomeScreen extends State<MyHomeScreen> {
                                       ),
                                     ),
                                   ),
-                                  Text('Sản phẩm\n  tiện lợi'),
+                                  Text(
+                                    'Sản phẩm\ntiện lợi',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
@@ -367,7 +409,13 @@ class HomeScreen extends State<MyHomeScreen> {
                                       ),
                                     ),
                                   ),
-                                  Text('Thiết bị\n    y tế'),
+                                  Text(
+                                    'Thiết bị\ny tế',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
@@ -452,10 +500,13 @@ class HomeScreen extends State<MyHomeScreen> {
                                   ),
                                   children: <TextSpan>[
                                     TextSpan(
-                                        text: '59.000 VND/',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold)),
-                                    TextSpan(text: 'cái!'),
+                                      text: '59.000 VND/',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                        color: Colors.red,
+                                      ),
+                                    ),
+                                    TextSpan(text: 'cái!', style: TextStyle(color: Colors.red)),
                                   ],
                                 ),
                               ),
@@ -538,8 +589,11 @@ class HomeScreen extends State<MyHomeScreen> {
                                     TextSpan(
                                         text: '49.000 VND/',
                                         style: TextStyle(
-                                            fontWeight: FontWeight.bold)),
-                                    TextSpan(text: 'cái!'),
+                                            fontWeight: FontWeight.bold,
+                                          color: Colors.red,
+                                        ),
+                                    ),
+                                    TextSpan(text: 'cái!', style: TextStyle(color: Colors.red)),
                                   ],
                                 ),
                               ),
@@ -620,10 +674,13 @@ class HomeScreen extends State<MyHomeScreen> {
                                   ),
                                   children: <TextSpan>[
                                     TextSpan(
-                                        text: '30.000 VND/',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold)),
-                                    TextSpan(text: 'cái!'),
+                                      text: '30.000 VND/',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.red,
+                                      ),
+                                    ),
+                                    TextSpan(text: 'cái!', style: TextStyle(color: Colors.red)),
                                   ],
                                 ),
                               ),
@@ -704,10 +761,13 @@ class HomeScreen extends State<MyHomeScreen> {
                                   ),
                                   children: <TextSpan>[
                                     TextSpan(
-                                        text: '24.000 VND/',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold)),
-                                    TextSpan(text: 'cái!'),
+                                      text: '24.000 VND/',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.red,
+                                      ),
+                                    ),
+                                    TextSpan(text: 'cái!', style: TextStyle(color: Colors.red)),
                                   ],
                                 ),
                               ),
@@ -784,6 +844,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                       child: Container(
                                         height: 30.0,
                                         width: 50.0,
+                                        alignment: Alignment.center,
                                         decoration: BoxDecoration(
                                           color: Colors.red,
                                           borderRadius:
@@ -835,7 +896,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                 '40.000 VND',
                                 style: TextStyle(
                                   fontSize: 15.0,
-                                  color: Colors.grey,
+                                  color: Colors.red,
                                   decoration: TextDecoration.lineThrough,
                                 ),
                               ),
@@ -848,8 +909,11 @@ class HomeScreen extends State<MyHomeScreen> {
                                     TextSpan(
                                         text: '28.000 VND/',
                                         style: TextStyle(
-                                            fontWeight: FontWeight.bold)),
-                                    TextSpan(text: 'cái!'),
+                                            fontWeight: FontWeight.bold,
+                                          color: Colors.red,
+                                        ),
+                                    ),
+                                    TextSpan(text: 'cái!', style: TextStyle(color: Colors.red)),
                                   ],
                                 ),
                               ),
@@ -900,6 +964,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                       child: Container(
                                         height: 30.0,
                                         width: 50.0,
+                                        alignment: Alignment.center,
                                         decoration: BoxDecoration(
                                           color: Colors.red,
                                           borderRadius:
@@ -951,7 +1016,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                 '40.000 VND',
                                 style: TextStyle(
                                   fontSize: 15.0,
-                                  color: Colors.grey,
+                                  color: Colors.red,
                                   decoration: TextDecoration.lineThrough,
                                 ),
                               ),
@@ -962,10 +1027,13 @@ class HomeScreen extends State<MyHomeScreen> {
                                   ),
                                   children: <TextSpan>[
                                     TextSpan(
-                                        text: '28.000 VND/',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold)),
-                                    TextSpan(text: 'cái!'),
+                                      text: '28.000 VND/',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.red,
+                                      ),
+                                    ),
+                                    TextSpan(text: 'cái!', style: TextStyle(color: Colors.red)),
                                   ],
                                 ),
                               ),
@@ -1016,6 +1084,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                       child: Container(
                                         height: 30.0,
                                         width: 50.0,
+                                        alignment: Alignment.center,
                                         decoration: BoxDecoration(
                                           color: Colors.red,
                                           borderRadius:
@@ -1067,7 +1136,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                 '2.100 VND',
                                 style: TextStyle(
                                   fontSize: 15.0,
-                                  color: Colors.grey,
+                                  color: Colors.red,
                                   decoration: TextDecoration.lineThrough,
                                 ),
                               ),
@@ -1078,10 +1147,13 @@ class HomeScreen extends State<MyHomeScreen> {
                                   ),
                                   children: <TextSpan>[
                                     TextSpan(
-                                        text: '1.470 VND/',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold)),
-                                    TextSpan(text: 'cái!'),
+                                      text: '1.470 VND/',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.red,
+                                      ),
+                                    ),
+                                    TextSpan(text: 'cái!', style: TextStyle(color: Colors.red)),
                                   ],
                                 ),
                               ),
@@ -1131,6 +1203,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                       child: Container(
                                         height: 30.0,
                                         width: 50.0,
+                                        alignment: Alignment.center,
                                         decoration: BoxDecoration(
                                           color: Colors.red,
                                           borderRadius:
@@ -1182,7 +1255,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                 '220.000 VND',
                                 style: TextStyle(
                                   fontSize: 15.0,
-                                  color: Colors.grey,
+                                  color: Colors.red,
                                   decoration: TextDecoration.lineThrough,
                                 ),
                               ),
@@ -1193,10 +1266,13 @@ class HomeScreen extends State<MyHomeScreen> {
                                   ),
                                   children: <TextSpan>[
                                     TextSpan(
-                                        text: '110.000 VND/',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold)),
-                                    TextSpan(text: 'cái!'),
+                                      text: '110.000 VND/',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.red,
+                                      ),
+                                    ),
+                                    TextSpan(text: 'cái!', style: TextStyle(color: Colors.red)),
                                   ],
                                 ),
                               ),
