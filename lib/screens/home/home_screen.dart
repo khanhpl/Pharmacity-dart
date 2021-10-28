@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:pharmacity_dart/screens/services/product_detail.dart';
+import 'package:pharmacity_dart/screens/services/product_only_pharmacity.dart';
 import 'main_page.dart';
 import 'up_nav_bar.dart';
 
@@ -11,6 +13,14 @@ class MyHomeScreen extends StatefulWidget {
 }
 
 class HomeScreen extends State<MyHomeScreen> {
+
+  List<ProductDetail> _detailList = [
+    ProductDetail(image: 'assets/product1.webp', brand: 'assets/pharmacitybrand.png', name: 'Áo mưa cánh dơi Pharmacity', price: '59.000'),
+    ProductDetail(image: 'assets/product2.webp', brand: 'assets/pharmacitybrand.png', name: 'Áo mưa Pharmacity', price: '49.000'),
+    ProductDetail(image: 'assets/product3.webp', brand: 'assets/pharmacitybrand.png', name: 'Bàn chải đánh răng cho răng nhạy cảm', price: '30.000'),
+    ProductDetail(image: 'assets/product4.webp', brand: 'assets/pharmacitybrand.png', name: 'Băng keo cá nhân bằng da', price: '24.000')
+  ];
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -201,7 +211,7 @@ class HomeScreen extends State<MyHomeScreen> {
                 SizedBox(height: 10.0),
                 Container(
                   // color: Colors.black,
-                  height: size.height * 0.55,
+                  height: size.height * 0.43,
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
@@ -213,21 +223,24 @@ class HomeScreen extends State<MyHomeScreen> {
                               child: Column(
                                 children: <Widget>[
                                   Container(
-                                    height: size.height * 0.23 - 2,
-                                    width: size.width * 0.30,
+                                    height: size.height * 0.14,
+                                    width: size.width * 0.25,
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
-                                        image:
-                                            AssetImage('assets/duocpham.png'),
+                                        image: AssetImage('assets/duocpham.png'),
                                         fit: BoxFit.fill,
                                       ),
                                     ),
                                   ),
-                                  Text(
-                                    'Dược phẩm',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: Colors.black,
+                                  Container(
+                                    height: size.height * 0.06,
+                                    width: size.width * 0.25,
+                                    child: Text(
+                                      'Dược phẩm',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -238,21 +251,24 @@ class HomeScreen extends State<MyHomeScreen> {
                               child: Column(
                                 children: <Widget>[
                                   Container(
-                                    height: size.height * 0.2,
-                                    width: size.width * 0.30,
+                                    height: size.height * 0.14,
+                                    width: size.width * 0.25,
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/thucphamchucnang.png'),
+                                        image: AssetImage('assets/thucphamchucnang.png'),
                                         fit: BoxFit.fill,
                                       ),
                                     ),
                                   ),
-                                  Text(
-                                    'Thực phẩm\nchức năng',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: Colors.black,
+                                  Container(
+                                    height: size.height * 0.06,
+                                    width: size.width * 0.25,
+                                    child: Text(
+                                      'Thực phẩm chức năng',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -267,21 +283,24 @@ class HomeScreen extends State<MyHomeScreen> {
                               child: Column(
                                 children: <Widget>[
                                   Container(
-                                    height: size.height * 0.2,
-                                    width: size.width * 0.30,
+                                    height: size.height * 0.14,
+                                    width: size.width * 0.25,
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/chamsocsuckhoe.png'),
+                                        image: AssetImage('assets/chamsocsuckhoe.png'),
                                         fit: BoxFit.fill,
                                       ),
                                     ),
                                   ),
-                                  Text(
-                                    'Chăm sóc\nsức khỏe',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: Colors.black,
+                                  Container(
+                                    height: size.height * 0.06,
+                                    width: size.width * 0.25,
+                                    child: Text(
+                                      'Chăm sóc sức khỏe',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -292,8 +311,8 @@ class HomeScreen extends State<MyHomeScreen> {
                               child: Column(
                                 children: <Widget>[
                                   Container(
-                                    height: size.height * 0.22 + 4,
-                                    width: size.width * 0.30,
+                                    height: size.height * 0.14,
+                                    width: size.width * 0.25,
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
                                         image: AssetImage('assets/mevabe.png'),
@@ -301,11 +320,15 @@ class HomeScreen extends State<MyHomeScreen> {
                                       ),
                                     ),
                                   ),
-                                  Text(
-                                    'Mẹ và Bé',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: Colors.black,
+                                  Container(
+                                    height: size.height * 0.06,
+                                    width: size.width * 0.25,
+                                    child: Text(
+                                      'Mẹ và Bé',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -320,21 +343,24 @@ class HomeScreen extends State<MyHomeScreen> {
                               child: Column(
                                 children: <Widget>[
                                   Container(
-                                    height: size.height * 0.2,
-                                    width: size.width * 0.30,
+                                    height: size.height * 0.14,
+                                    width: size.width * 0.25,
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/chamsoccanhan.png'),
+                                        image: AssetImage('assets/chamsoccanhan.png'),
                                         fit: BoxFit.fill,
                                       ),
                                     ),
                                   ),
-                                  Text(
-                                    'Chăm sóc\ncá nhân',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: Colors.black,
+                                  Container(
+                                    height: size.height * 0.06,
+                                    width: size.width * 0.25,
+                                    child: Text(
+                                      'Chăm sóc cá nhân',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -345,21 +371,24 @@ class HomeScreen extends State<MyHomeScreen> {
                               child: Column(
                                 children: <Widget>[
                                   Container(
-                                    height: size.height * 0.2,
-                                    width: size.width * 0.30,
+                                    height: size.height * 0.14,
+                                    width: size.width * 0.25,
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/chamsocsacdep.png'),
+                                        image: AssetImage('assets/chamsocsacdep.png'),
                                         fit: BoxFit.fill,
                                       ),
                                     ),
                                   ),
-                                  Text(
-                                    'Chăm sóc\nsắc đẹp',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: Colors.black,
+                                  Container(
+                                    height: size.height * 0.06,
+                                    width: size.width * 0.25,
+                                    child: Text(
+                                      'Chăm sóc sắc đẹp',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -374,21 +403,24 @@ class HomeScreen extends State<MyHomeScreen> {
                               child: Column(
                                 children: <Widget>[
                                   Container(
-                                    height: size.height * 0.2,
-                                    width: size.width * 0.30,
+                                    height: size.height * 0.14,
+                                    width: size.width * 0.25,
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
-                                        image: AssetImage(
-                                            'assets/sanphamtienloi.png'),
+                                        image: AssetImage('assets/sanphamtienloi.png'),
                                         fit: BoxFit.fill,
                                       ),
                                     ),
                                   ),
-                                  Text(
-                                    'Sản phẩm\ntiện lợi',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: Colors.black,
+                                  Container(
+                                    height: size.height * 0.06,
+                                    width: size.width * 0.25,
+                                    child: Text(
+                                      'Sản phẩm tiện lợi',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -399,21 +431,24 @@ class HomeScreen extends State<MyHomeScreen> {
                               child: Column(
                                 children: <Widget>[
                                   Container(
-                                    height: size.height * 0.2,
-                                    width: size.width * 0.30,
+                                    height: size.height * 0.14,
+                                    width: size.width * 0.25,
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
-                                        image:
-                                            AssetImage('assets/thietbiyte.png'),
+                                        image: AssetImage('assets/thietbiyte.png'),
                                         fit: BoxFit.fill,
                                       ),
                                     ),
                                   ),
-                                  Text(
-                                    'Thiết bị\ny tế',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: Colors.black,
+                                  Container(
+                                    height: size.height * 0.06,
+                                    width: size.width * 0.25,
+                                    child: Text(
+                                      'Thiết bị y tế',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -442,361 +477,15 @@ class HomeScreen extends State<MyHomeScreen> {
                 SizedBox(height: 10.0),
                 Container(
                   height: size.height * 0.5,
-                  child: SingleChildScrollView(
+                  child:ListView.separated(
                     scrollDirection: Axis.horizontal,
-                    child: Row(
-                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        SizedBox(width: 10.0),
-                        OutlinedButton(
-                          onPressed: () {},
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Container(
-                                height: size.height * 0.2,
-                                width: size.width * 0.5,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/product1.webp'),
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                height: 30.0,
-                                width: 140,
-                                alignment: Alignment.centerLeft,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20.0),
-                                  color: Colors.grey[200],
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                          'assets/pharmacitybrand.png'),
-                                      alignment: Alignment.centerRight),
-                                ),
-                                child: Text(
-                                  'Thương hiệu',
-                                  style: TextStyle(
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                height: 40.0,
-                                child: Text(
-                                  'Áo mưa cánh dơi\nPharmacity',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 20.0),
-                              RichText(
-                                text: TextSpan(
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                      text: '59.000 VND/',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                        color: Colors.red,
-                                      ),
-                                    ),
-                                    TextSpan(text: 'cái!', style: TextStyle(color: Colors.red)),
-                                  ],
-                                ),
-                              ),
-                              SizedBox(height: 20.0),
-                              TextButton(
-                                onPressed: () {},
-                                child: Container(
-                                  margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
-                                  width: 150,
-                                  height: 40,
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                    color: Colors.green,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Text(
-                                    'Thêm vào giỏ hàng',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(width: 10.0),
-                        OutlinedButton(
-                          onPressed: () {},
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Container(
-                                height: size.height * 0.2,
-                                width: size.width * 0.5,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/product2.webp'),
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                height: 30.0,
-                                width: 140,
-                                alignment: Alignment.centerLeft,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20.0),
-                                  color: Colors.grey[200],
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                          'assets/pharmacitybrand.png'),
-                                      alignment: Alignment.centerRight),
-                                ),
-                                child: Text(
-                                  'Thương hiệu',
-                                  style: TextStyle(
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                height: 40.0,
-                                child: Text(
-                                  'Áo mưa Pharmacity',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 20.0),
-                              RichText(
-                                text: TextSpan(
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                        text: '49.000 VND/',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                          color: Colors.red,
-                                        ),
-                                    ),
-                                    TextSpan(text: 'cái!', style: TextStyle(color: Colors.red)),
-                                  ],
-                                ),
-                              ),
-                              SizedBox(height: 20.0),
-                              TextButton(
-                                onPressed: () {},
-                                child: Container(
-                                  margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
-                                  width: 150,
-                                  height: 40,
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                    color: Colors.green,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Text(
-                                    'Thêm vào giỏ hàng',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(width: 10.0),
-                        OutlinedButton(
-                          onPressed: () {},
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Container(
-                                height: size.height * 0.2,
-                                width: size.width * 0.5,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/product3.webp'),
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                height: 30.0,
-                                width: 140,
-                                alignment: Alignment.centerLeft,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20.0),
-                                  color: Colors.grey[200],
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                          'assets/pharmacitybrand.png'),
-                                      alignment: Alignment.centerRight),
-                                ),
-                                child: Text(
-                                  'Thương hiệu',
-                                  style: TextStyle(
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                height: 40.0,
-                                child: Text(
-                                  'Bàn chải đánh răng\n cho răng nhạy cảm',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 20.0),
-                              RichText(
-                                text: TextSpan(
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                      text: '30.000 VND/',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.red,
-                                      ),
-                                    ),
-                                    TextSpan(text: 'cái!', style: TextStyle(color: Colors.red)),
-                                  ],
-                                ),
-                              ),
-                              SizedBox(height: 20.0),
-                              TextButton(
-                                onPressed: () {},
-                                child: Container(
-                                  margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
-                                  width: 150,
-                                  height: 40,
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                    color: Colors.green,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Text(
-                                    'Thêm vào giỏ hàng',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(width: 10.0),
-                        OutlinedButton(
-                          onPressed: () {},
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Container(
-                                height: size.height * 0.2,
-                                width: size.width * 0.5,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/product4.webp'),
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                height: 30.0,
-                                width: 140,
-                                alignment: Alignment.centerLeft,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20.0),
-                                  color: Colors.grey[200],
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                          'assets/pharmacitybrand.png'),
-                                      alignment: Alignment.centerRight),
-                                ),
-                                child: Text(
-                                  'Thương hiệu',
-                                  style: TextStyle(
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                height: 40.0,
-                                child: Text(
-                                  'Băng keo cá nhân màu da',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 20.0),
-                              RichText(
-                                text: TextSpan(
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                      text: '24.000 VND/',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.red,
-                                      ),
-                                    ),
-                                    TextSpan(text: 'cái!', style: TextStyle(color: Colors.red)),
-                                  ],
-                                ),
-                              ),
-                              SizedBox(height: 20.0),
-                              TextButton(
-                                onPressed: () {},
-                                child: Container(
-                                  margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
-                                  width: 150,
-                                  height: 40,
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                    color: Colors.green,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Text(
-                                    'Thêm vào giỏ hàng',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
+                    itemCount: _detailList.length,
+                    separatorBuilder: (BuildContext context, int index) {
+                      return SizedBox(width: 10.0);
+                    },
+                    itemBuilder: (BuildContext context, int index) {
+                      return PharmacityProductOnly(product: _detailList[index]);
+                    },
                   ),
                 ),
                 SizedBox(height: 10.0),
