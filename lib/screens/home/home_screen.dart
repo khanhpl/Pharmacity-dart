@@ -997,39 +997,37 @@ class HomeScreen extends State<MyHomeScreen> {
                   ),
                 ),
                 SizedBox(height: 10.0),
-                Row(
-                  children: [
-                    Container(
-                      width: size.width * 0.6,
-                      alignment: Alignment.centerLeft,
-                      margin: EdgeInsets.only(
-                        left: 10.0,
-                      ),
-                      child: Text(
+                Container(
+                  // alignment: Alignment.centerLeft,
+                  margin: EdgeInsets.only(
+                    left: 10.0,
+                  ),
+                  child: Row(
+                    children: <Widget>[
+                      Text(
                         'Thương hiệu nổi bật',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20.0,
                         ),
                       ),
-                    ),
-                    Container(
-                      width: size.width * 0.3,
-                      alignment: Alignment.centerRight,
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.pushNamed(context, "");
-                        },
-                        child: Text(
-                          "Xem tất cả",
-                          textAlign: TextAlign.right,
-                          style: TextStyle(
-                            color: Colors.blue,
+                      Spacer(),
+                      Container(
+                        child: GestureDetector(
+                          onTap: () {
+
+                          },
+                          child: Text(
+                            "Xem tất cả",
+                            textAlign: TextAlign.right,
+                            style: TextStyle(
+                              color: Colors.blue,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
                 SizedBox(height: 10.0),
                 Container(
