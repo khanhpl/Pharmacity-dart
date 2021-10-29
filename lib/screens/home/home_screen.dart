@@ -6,6 +6,8 @@ import 'main_page.dart';
 import 'up_nav_bar.dart';
 
 class MyHomeScreen extends StatefulWidget {
+  ScrollController scrollController;
+  MyHomeScreen({required this.scrollController});
   @override
   HomeScreen createState() {
     return new HomeScreen();
@@ -39,6 +41,7 @@ class HomeScreen extends State<MyHomeScreen> {
             ),
           ),
           child: SingleChildScrollView(
+            controller: widget.scrollController,
             scrollDirection: Axis.vertical,
             child: Column(
               children: <Widget>[

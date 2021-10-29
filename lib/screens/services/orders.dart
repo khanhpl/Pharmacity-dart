@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Order extends StatelessWidget {
+class Order extends StatefulWidget {
+   Function toggleView;
+  Order({required this.toggleView});
+  @override
+  State<Order> createState() => _OrderState();
+}
+
+class _OrderState extends State<Order> {
+  bool _isSelected = true;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -20,9 +28,47 @@ class Order extends StatelessWidget {
             ),
           ),
           actions: <Widget>[
-            IconButton(
+            PopupMenuButton(
+              onSelected: (bool value) {
+                setState(() => _isSelected = value);
+              },
               icon: Icon(Icons.menu),
-              onPressed: () {},
+              itemBuilder: (BuildContext context) => [
+                PopupMenuItem(
+                  value: true,
+                  child: Row(
+                    children: <Widget>[
+                      // Visibility(
+                      //   child: Icon(Icons.check_circle_outlined, color: Colors.grey),
+                      //   visible: _isSelected1,
+                      // ),
+                      Opacity(
+                        opacity: _isSelected ? 1.0 : 0.0,
+                        child: Icon(Icons.check_circle_outlined, color: Colors.grey),
+                      ),
+                      SizedBox(width: 10.0),
+                      Text('Đơn hàng mới nhất'),
+                    ],
+                  ),
+                ),
+                PopupMenuItem(
+                  value: false,
+                  child: Row(
+                    children: <Widget>[
+                      // Visibility(
+                      //   child: Icon(Icons.check_circle_outlined, color: Colors.grey),
+                      //   visible: !_isSelected1,
+                      // ),
+                      Opacity(
+                        opacity: _isSelected ? 0.0 : 1.0,
+                        child: Icon(Icons.check_circle_outlined, color: Colors.grey),
+                      ),
+                      SizedBox(width: 10.0),
+                      Text('Đơn hàng cũ nhất'),
+                    ],
+                  ),
+                ),
+              ],
             ),
           ],
         ),
@@ -93,12 +139,12 @@ class Order extends StatelessWidget {
                     child: Container(
                       child: TabBarView(
                         children: <Widget>[
-                          Receipt(),
-                          Receipt(),
-                          Receipt(),
-                          Receipt(),
-                          Receipt(),
-                          Receipt(),
+                          Receipt(toggleView: widget.toggleView),
+                          Receipt(toggleView: widget.toggleView),
+                          Receipt(toggleView: widget.toggleView),
+                          Receipt(toggleView: widget.toggleView),
+                          Receipt(toggleView: widget.toggleView),
+                          Receipt(toggleView: widget.toggleView),
                         ],
                       ),
                     ),
@@ -113,7 +159,15 @@ class Order extends StatelessWidget {
   }
 }
 
-class Receipt extends StatelessWidget {
+class Receipt extends StatefulWidget {
+   Function toggleView;
+  Receipt({required this.toggleView});
+
+  @override
+  State<Receipt> createState() => _ReceiptState();
+}
+
+class _ReceiptState extends State<Receipt> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -144,7 +198,9 @@ class Receipt extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10.0),
               ),
               child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    widget.toggleView();
+                  },
                   child: Text(
                     'Mua sắm ngay',
                     textAlign: TextAlign.center,
