@@ -134,7 +134,9 @@ class _ProductListState extends State<ProductList> {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.shopping_cart_outlined),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/shoppingCart');
+            },
           ),
         ],
       ),
