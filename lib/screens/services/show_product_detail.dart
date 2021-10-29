@@ -49,7 +49,7 @@ class _DetailState extends State<Detail> {
           SizedBox(width: 20),
           Container(
             height: size.height * 0.1,
-            width: size.width * 0.35,
+            width: 150,
             decoration: BoxDecoration(
               color: Colors.grey[200],
               borderRadius: BorderRadius.circular(5.0),
@@ -68,7 +68,7 @@ class _DetailState extends State<Detail> {
           SizedBox(width: 10),
           Container(
             height: size.height * 0.1,
-            width: size.width * 0.53,
+            width: 190,
             decoration: BoxDecoration(
               color: Colors.green,
               borderRadius: BorderRadius.circular(5.0),
@@ -78,9 +78,9 @@ class _DetailState extends State<Detail> {
               onPressed: () {},
               child: Row(
                 children: <Widget>[
-                  SizedBox(width: 10.0),
+                  SizedBox(width: 5.0),
                   Icon(Icons.shopping_cart_outlined, color: Colors.white),
-                  SizedBox(width: 10.0),
+                  SizedBox(width: 5.0),
                   Text(
                     'Thêm vào giỏ hàng',
                     style: TextStyle(
@@ -96,6 +96,7 @@ class _DetailState extends State<Detail> {
         ],
       ),
       body: Container(
+        margin: EdgeInsets.only(left: 5.0,right: 5.0),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
@@ -126,6 +127,7 @@ class _DetailState extends State<Detail> {
                 child: Text(
                   'Thương hiệu',
                   style: TextStyle(
+                    fontSize: 13.0,
                     color: Colors.grey,
                   ),
                 ),
