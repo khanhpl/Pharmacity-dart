@@ -1,29 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_pro/carousel_pro.dart';
-import 'screens/home/home_screen.dart';
+import 'package:pharmacity_dart/screens/services/accounts/accounts.dart';
 import 'screens/services/notification.dart';
 import 'screens/services/shopping_cart.dart';
 import 'screens/services/phouse_system/phouse_system.dart';
 import 'screens/home/main_page.dart';
-
-// void main() => runApp(MyApp());
-//
-// class MyApp extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//         title: 'Pharmacity Demo',
-//         theme: ThemeData(
-//           primarySwatch: Colors.blue,
-//         ),
-//         home: MyBottomBar(),
-//         routes: <String, WidgetBuilder>{
-//           '/notification': (BuildContext context) => NotificationPage(),
-//           '/shoppingCart': (BuildContext context) => ShoppingCartPage(),
-//           '/phouseSystem': (BuildContext context) => MyPHouseSystemPage(),
-//         });
-//   }
-// }
+import 'screens/services/accounts/login_form.dart';
+import 'screens/services/accounts/accounts.dart';
+import 'screens/services/accounts/user_ranking.dart';
+import 'screens/services/accounts/help_center.dart';
+import 'screens/services/accounts/accountSetting.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -33,6 +18,11 @@ void main() {
       '/notification': (context) => NotificationPage(),
       '/shoppingCart': (context) => ShoppingCartPage(),
       '/phouseSystem': (context) => MyPHouseSystemPage(),
+      '/loginForm': (context) => MyLoginForm(),
+      '/accounts': (context) => Account(),
+      '/userRanking': (context) => MyUserRanking(),
+      '/helpCenter': (context) => MyHelpCenter(),
+      '/accountSetting': (context) => MyAccountSetting(),
     },
   ));
 }
