@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 class Account extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -56,7 +56,9 @@ class Account extends StatelessWidget {
                         ),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/loginForm');
+                    },
                   ),
                   width: _pageWidth,
                   margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
@@ -76,21 +78,26 @@ class Account extends StatelessWidget {
               children: [
                 Container(
                   height: _pageHeight * 0.075,
-                  width: _pageWidth,
-                  child: Row(
-                    children: [
-                      Container(
-                        child: Icon(Icons.album),
-                        width: _pageWidth*0.1,
-                      ),
-                      Container(
-                        child: Text('Quy chế xếp hạng thành viên ExtraCare'),
-                        width: _pageWidth*0.8,
-                      ),
-                      Container(
-                        child: Icon(Icons.arrow_forward_ios),
-                      )
-                    ],
+                  // width: _pageWidth,
+                  child: FlatButton(
+                    child: Row(
+                      children: [
+                        Container(
+                          child: Icon(Icons.album),
+                          width: _pageWidth * 0.1,
+                        ),
+                        Container(
+                          child: Text('Quy chế xếp hạng thành viên ExtraCare'),
+                          width: _pageWidth * 0.75,
+                        ),
+                        Container(
+                          child: Icon(Icons.arrow_forward_ios),
+                        )
+                      ],
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/userRanking');
+                    },
                   ),
                 ),
                 Container(
@@ -107,20 +114,25 @@ class Account extends StatelessWidget {
                       bottom: BorderSide(color: Colors.grey.shade100),
                     ),
                   ),
-                  child: Row(
-                    children: [
-                      Container(
-                        child: Icon(Icons.help_center_outlined),
-                        width: _pageWidth*0.1,
-                      ),
-                      Container(
-                        child: Text('Trung tâm trợ giúp'),
-                        width: _pageWidth*0.8,
-                      ),
-                      Container(
-                        child: Icon(Icons.arrow_forward_ios),
-                      )
-                    ],
+                  child: FlatButton(
+                    child: Row(
+                      children: [
+                        Container(
+                          child: Icon(Icons.help_center_outlined),
+                          width: _pageWidth * 0.1,
+                        ),
+                        Container(
+                          child: Text('Trung tâm trợ giúp'),
+                          width: _pageWidth * 0.75,
+                        ),
+                        Container(
+                          child: Icon(Icons.arrow_forward_ios),
+                        )
+                      ],
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/helpCenter');
+                    },
                   ),
                 ),
                 Container(
@@ -131,51 +143,61 @@ class Account extends StatelessWidget {
                       bottom: BorderSide(color: Colors.grey.shade100),
                     ),
                   ),
-                  child: Row(
-                    children: [
-                      Container(
-                        child: Icon(Icons.settings_applications_sharp),
-                        width: _pageWidth*0.1,
-                      ),
-                      Container(
-                        child: Text('Cài đặt'),
-                        width: _pageWidth*0.8,
-                      ),
-                      Container(
-                        child: Icon(Icons.arrow_forward_ios),
-                      )
-                    ],
+                  child: FlatButton(
+                    child: Row(
+                      children: [
+                        Container(
+                          child: Icon(Icons.settings_applications_sharp),
+                          width: _pageWidth * 0.1,
+                        ),
+                        Container(
+                          child: Text('Cài đặt'),
+                          width: _pageWidth * 0.75,
+                        ),
+                        Container(
+                          child: Icon(Icons.arrow_forward_ios),
+                        )
+                      ],
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/accountSetting');
+                    },
                   ),
                 ),
                 Container(
                   height: _pageHeight * 0.1,
-                  width: _pageWidth *0.4,
+                  width: _pageWidth * 0.4,
                   decoration: BoxDecoration(
                     border: Border(
                       bottom: BorderSide(color: Colors.grey.shade100),
                     ),
                   ),
-                  child: Row(
-                    children: [
-                      Container(
-                        child: Icon(Icons.support_agent_outlined),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(top: 20),
-                        child: Column(
-                          children: [
-                            Text(
-                              '1800 6821',
-                              style: TextStyle(
-                                color: Colors.blue[700],
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text('Tư vấn đặt hàng'),
-                          ],
+                  child: FlatButton(
+                    child: Row(
+                      children: [
+                        Container(
+                          child: Icon(Icons.support_agent_outlined),
                         ),
-                      )
-                    ],
+                        Container(
+                          margin: EdgeInsets.only(top: 20),
+                          child: Column(
+                            children: [
+                              Text(
+                                '1800 6821',
+                                style: TextStyle(
+                                  color: Colors.blue[700],
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text('Tư vấn đặt hàng'),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                    onPressed: () {
+                      launch("tel://18006821");
+                    },
                   ),
                 ),
               ],

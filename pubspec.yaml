@@ -37,6 +37,8 @@ dependencies:
   carousel_slider: ^4.0.0
   carousel_pro: ^1.0.0
   google_maps_flutter: ^2.0.11
+  flutter_dash: ^0.0.1
+  url_launcher: ^6.0.12
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -91,3 +93,4 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
   - assets/
+  - assets/accounts/
