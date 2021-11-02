@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:pharmacity_dart/screens/services/product_detail.dart';
+import 'package:pharmacity_dart/screens/services/products_only_on_pharmacity/product_detail.dart';
 import 'package:pharmacity_dart/screens/services/shopping_cart.dart';
 
 class Detail extends StatefulWidget {
   ProductDetail product;
+
   Detail({required this.product});
+
   @override
   _DetailState createState() => _DetailState();
 }
@@ -16,7 +18,8 @@ class _DetailState extends State<Detail> {
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(
-          color: Colors.black, // IconThemeData is to change color of Back Arrow Button
+          color: Colors
+              .black, // IconThemeData is to change color of Back Arrow Button
         ),
         backgroundColor: Colors.white,
         centerTitle: true,
@@ -38,65 +41,75 @@ class _DetailState extends State<Detail> {
         actions: <Widget>[
           IconButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => ShoppingCartPage()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ShoppingCartPage()));
             },
             icon: Icon(Icons.shopping_cart_outlined),
           ),
         ],
       ),
-      floatingActionButton: Row(
-        children: <Widget>[
-          SizedBox(width: 20),
-          Container(
-            height: size.height * 0.1,
-            width: 150,
-            decoration: BoxDecoration(
-              color: Colors.grey[200],
-              borderRadius: BorderRadius.circular(5.0),
-              border: Border.all(color: Colors.blue),
-            ),
-            child: TextButton(
-              onPressed: () {},
-              child: Text(
-                'Mua ngay',
-                style: TextStyle(
-                  color: Colors.blue,
+      floatingActionButton: Container(
+        width: size.width,
+        child: Row(
+          children: <Widget>[
+            Container(
+              height: size.height * 0.1,
+              width: size.width * 0.4,
+              margin: EdgeInsets.only(left: size.width*0.07),
+              decoration: BoxDecoration(
+                color: Colors.grey[200],
+                borderRadius: BorderRadius.circular(15.0),
+                border: Border.all(color: Colors.blue),
+              ),
+              child: TextButton(
+                onPressed: () {},
+                child: Text(
+                  'Mua ngay',
+                  style: TextStyle(
+                    color: Colors.blue,
+                  ),
                 ),
               ),
             ),
-          ),
-          SizedBox(width: 10),
-          Container(
-            height: size.height * 0.1,
-            width: 190,
-            decoration: BoxDecoration(
-              color: Colors.green,
-              borderRadius: BorderRadius.circular(5.0),
-              border: Border.all(color: Colors.green),
-            ),
-            child: TextButton(
-              onPressed: () {},
-              child: Row(
-                children: <Widget>[
-                  SizedBox(width: 5.0),
-                  Icon(Icons.shopping_cart_outlined, color: Colors.white),
-                  SizedBox(width: 5.0),
-                  Text(
-                    'Thêm vào giỏ hàng',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15.0,
-                    ),
+            Expanded(
+              child: Container(
+                height: size.height * 0.1,
+                // width: 190,
+                margin: EdgeInsets.only(left: size.width*0.05),
+                decoration: BoxDecoration(
+
+                  color: Colors.green,
+                  borderRadius: BorderRadius.circular(15.0),
+                  border: Border.all(color: Colors.green),
+                ),
+                child: TextButton(
+                  onPressed: () {},
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        child: Icon(Icons.shopping_cart_outlined, color: Colors.white),
+                      ),
+
+                      Container(
+                        child: Text(
+                          'Thêm vào giỏ hàng',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15.0,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ),
-          ),
-          SizedBox(width: 10),
-        ],
+          ],
+        ),
       ),
       body: Container(
-        margin: EdgeInsets.only(left: 5.0,right: 5.0),
+        margin: EdgeInsets.only(left: size.width*0.05, right: size.width*0.05),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(

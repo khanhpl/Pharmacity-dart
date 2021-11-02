@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
-import 'package:pharmacity_dart/screens/services/product_detail.dart';
-import 'package:pharmacity_dart/screens/services/product_only_pharmacity.dart';
+import 'package:pharmacity_dart/screens/services/hot_products_on_pharmacity/hot_product_detail.dart';
+import 'package:pharmacity_dart/screens/services/hot_products_on_pharmacity/hot_product_on_pharmacity.dart';
+import 'package:pharmacity_dart/screens/services/products_only_on_pharmacity/product_detail.dart';
+import 'package:pharmacity_dart/screens/services/products_only_on_pharmacity/product_only_pharmacity.dart';
 import 'main_page.dart';
 import 'up_nav_bar.dart';
 
@@ -21,6 +23,12 @@ class HomeScreen extends State<MyHomeScreen> {
     ProductDetail(image: 'assets/product2.webp', brand: 'assets/pharmacitybrand.png', name: 'Áo mưa Pharmacity', price: '49.000'),
     ProductDetail(image: 'assets/product3.webp', brand: 'assets/pharmacitybrand.png', name: 'Bàn chải đánh răng cho răng nhạy cảm', price: '30.000'),
     ProductDetail(image: 'assets/product4.webp', brand: 'assets/pharmacitybrand.png', name: 'Băng keo cá nhân bằng da', price: '24.000')
+  ];
+  List<HotProductDetail> _detailHotSaleList = [
+    HotProductDetail(image: 'assets/discount1.webp', brand: 'assets/pharmacitybrand.png',name: 'Bao cao su siêu mỏng hương bạc hà', price: '40.000', discount:'30%', discountPrice:'28.000' ),
+    HotProductDetail(image: 'assets/discount2.webp', brand: 'assets/pharmacitybrand.png',name: 'Bao cao su siêu mỏng hương dâu', price: '40.000', discount:'30%', discountPrice:'28.000' ),
+    HotProductDetail(image: 'assets/discount3.webp', brand: 'assets/pharmacitybrand.png',name: 'Bơm tiêm sử dụng 1 lần Vinahankook(10ml/1cc)', price: '2.100', discount:'30%', discountPrice:'28.000' ),
+    HotProductDetail(image: 'assets/discount4.webp', brand: 'assets/pharmacitybrand.png',name: 'Chai xịt làm lạnh Starblam(150ml)', price: '220.000', discount:'30%', discountPrice:'28.000' ),
   ];
 
   @override
@@ -214,7 +222,7 @@ class HomeScreen extends State<MyHomeScreen> {
                 SizedBox(height: 10.0),
                 Container(
                   // color: Colors.black,
-                  height: size.height * 0.43,
+                  height: size.height * 0.45,
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
@@ -479,6 +487,7 @@ class HomeScreen extends State<MyHomeScreen> {
                 ),
                 SizedBox(height: 10.0),
                 Container(
+                  margin: EdgeInsets.only(left: 10),
                   height: size.height * 0.5,
                   child:ListView.separated(
                     scrollDirection: Axis.horizontal,
@@ -507,493 +516,17 @@ class HomeScreen extends State<MyHomeScreen> {
                 ),
                 SizedBox(height: 10.0),
                 Container(
+                  margin: EdgeInsets.only(left: 10),
                   height: size.height * 0.5,
-                  child: SingleChildScrollView(
+                  child:ListView.separated(
                     scrollDirection: Axis.horizontal,
-                    child: Row(
-                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        SizedBox(width: 10.0),
-                        OutlinedButton(
-                          onPressed: () {},
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Container(
-                                height: size.height * 0.2,
-                                width: size.width * 0.5,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/discount1.webp'),
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                                child: Stack(
-                                  children: <Widget>[
-                                    Positioned(
-                                      top: 0.0,
-                                      right: 0.0,
-                                      child: Container(
-                                        height: 30.0,
-                                        width: 50.0,
-                                        alignment: Alignment.center,
-                                        decoration: BoxDecoration(
-                                          color: Colors.red,
-                                          borderRadius:
-                                              BorderRadius.circular(10.0),
-                                        ),
-                                        child: Text(
-                                          '-30%',
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                height: 30.0,
-                                width: 140,
-                                alignment: Alignment.centerLeft,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20.0),
-                                  color: Colors.grey[200],
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                          'assets/pharmacitybrand.png'),
-                                      alignment: Alignment.centerRight),
-                                ),
-                                child: Text(
-                                  'Thương hiệu',
-                                  style: TextStyle(
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                height: 40.0,
-                                child: Text(
-                                  'Bao cao su siêu\nmỏng hương bạc hà',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 5.0),
-                              Text(
-                                '40.000 VND',
-                                style: TextStyle(
-                                  fontSize: 15.0,
-                                  color: Colors.grey,
-                                  decoration: TextDecoration.lineThrough,
-                                ),
-                              ),
-                              RichText(
-                                text: TextSpan(
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                        text: '28.000 VND/',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                          color: Colors.red,
-                                        ),
-                                    ),
-                                    TextSpan(text: 'cái!', style: TextStyle(color: Colors.red)),
-                                  ],
-                                ),
-                              ),
-                              SizedBox(height: 20.0),
-                              TextButton(
-                                onPressed: () {},
-                                child: Container(
-                                  margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
-                                  width: 150,
-                                  height: 40,
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                    color: Colors.green,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Text(
-                                    'Thêm vào giỏ hàng',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(width: 10.0),
-                        OutlinedButton(
-                          onPressed: () {},
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Container(
-                                height: size.height * 0.2,
-                                width: size.width * 0.5,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/discount2.webp'),
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                                child: Stack(
-                                  children: <Widget>[
-                                    Positioned(
-                                      top: 0.0,
-                                      right: 0.0,
-                                      child: Container(
-                                        height: 30.0,
-                                        width: 50.0,
-                                        alignment: Alignment.center,
-                                        decoration: BoxDecoration(
-                                          color: Colors.red,
-                                          borderRadius:
-                                              BorderRadius.circular(10.0),
-                                        ),
-                                        child: Text(
-                                          '-30%',
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                height: 30.0,
-                                width: 140,
-                                alignment: Alignment.centerLeft,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20.0),
-                                  color: Colors.grey[200],
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                          'assets/pharmacitybrand.png'),
-                                      alignment: Alignment.centerRight),
-                                ),
-                                child: Text(
-                                  'Thương hiệu',
-                                  style: TextStyle(
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                height: 40.0,
-                                child: Text(
-                                  'Bao cao su siêu\nmỏng hương dâu',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 5.0),
-                              Text(
-                                '40.000 VND',
-                                style: TextStyle(
-                                  fontSize: 15.0,
-                                  color: Colors.grey,
-                                  decoration: TextDecoration.lineThrough,
-                                ),
-                              ),
-                              RichText(
-                                text: TextSpan(
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                      text: '28.000 VND/',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.red,
-                                      ),
-                                    ),
-                                    TextSpan(text: 'cái!', style: TextStyle(color: Colors.red)),
-                                  ],
-                                ),
-                              ),
-                              SizedBox(height: 20.0),
-                              TextButton(
-                                onPressed: () {},
-                                child: Container(
-                                  margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
-                                  width: 150,
-                                  height: 40,
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                    color: Colors.green,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Text(
-                                    'Thêm vào giỏ hàng',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(width: 10.0),
-                        OutlinedButton(
-                          onPressed: () {},
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Container(
-                                height: size.height * 0.2,
-                                width: size.width * 0.5,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/discount3.webp'),
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                                child: Stack(
-                                  children: <Widget>[
-                                    Positioned(
-                                      top: 0.0,
-                                      right: 0.0,
-                                      child: Container(
-                                        height: 30.0,
-                                        width: 50.0,
-                                        alignment: Alignment.center,
-                                        decoration: BoxDecoration(
-                                          color: Colors.red,
-                                          borderRadius:
-                                              BorderRadius.circular(10.0),
-                                        ),
-                                        child: Text(
-                                          '-30%',
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                height: 30.0,
-                                width: 140,
-                                alignment: Alignment.centerLeft,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20.0),
-                                  color: Colors.grey[200],
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                          'assets/pharmacitybrand.png'),
-                                      alignment: Alignment.centerRight),
-                                ),
-                                child: Text(
-                                  'Thương hiệu',
-                                  style: TextStyle(
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                height: 40.0,
-                                child: Text(
-                                  'Bơm tiêm sử dụng 1 lần\n vinahankook(10ml/cc)',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 5.0),
-                              Text(
-                                '2.100 VND',
-                                style: TextStyle(
-                                  fontSize: 15.0,
-                                  color: Colors.grey,
-                                  decoration: TextDecoration.lineThrough,
-                                ),
-                              ),
-                              RichText(
-                                text: TextSpan(
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                      text: '1.470 VND/',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.red,
-                                      ),
-                                    ),
-                                    TextSpan(text: 'cái!', style: TextStyle(color: Colors.red)),
-                                  ],
-                                ),
-                              ),
-                              SizedBox(height: 20.0),
-                              TextButton(
-                                onPressed: () {},
-                                child: Container(
-                                  margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
-                                  width: 150,
-                                  height: 40,
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                    color: Colors.green,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Text(
-                                    'Thêm vào giỏ hàng',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        OutlinedButton(
-                          onPressed: () {},
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Container(
-                                height: size.height * 0.2,
-                                width: size.width * 0.5,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/discount4.webp'),
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                                child: Stack(
-                                  children: <Widget>[
-                                    Positioned(
-                                      top: 0.0,
-                                      right: 0.0,
-                                      child: Container(
-                                        height: 30.0,
-                                        width: 50.0,
-                                        alignment: Alignment.center,
-                                        decoration: BoxDecoration(
-                                          color: Colors.red,
-                                          borderRadius:
-                                              BorderRadius.circular(10.0),
-                                        ),
-                                        child: Text(
-                                          '-50%',
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                height: 30.0,
-                                width: 140,
-                                alignment: Alignment.centerLeft,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20.0),
-                                  color: Colors.grey[200],
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                          'assets/pharmacitybrand.png'),
-                                      alignment: Alignment.centerRight),
-                                ),
-                                child: Text(
-                                  'Thương hiệu',
-                                  style: TextStyle(
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                height: 40.0,
-                                child: Text(
-                                  'Chai xịt làm lạnh Starbalm\n(150ml)',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 5.0),
-                              Text(
-                                '220.000 VND',
-                                style: TextStyle(
-                                  fontSize: 15.0,
-                                  color: Colors.grey,
-                                  decoration: TextDecoration.lineThrough,
-                                ),
-                              ),
-                              RichText(
-                                text: TextSpan(
-                                  style: TextStyle(
-                                    fontSize: 20,
-                                  ),
-                                  children: <TextSpan>[
-                                    TextSpan(
-                                      text: '110.000 VND/',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.red,
-                                      ),
-                                    ),
-                                    TextSpan(text: 'cái!', style: TextStyle(color: Colors.red)),
-                                  ],
-                                ),
-                              ),
-                              SizedBox(height: 20.0),
-                              TextButton(
-                                onPressed: () {},
-                                child: Container(
-                                  margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
-                                  width: 150,
-                                  height: 40,
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                    color: Colors.green,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  child: Text(
-                                    'Thêm vào giỏ hàng',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
+                    itemCount: _detailHotSaleList.length,
+                    separatorBuilder: (BuildContext context, int index) {
+                      return SizedBox(width: 10.0);
+                    },
+                    itemBuilder: (BuildContext context, int index) {
+                      return PharmacityHotProduct(product: _detailHotSaleList[index]);
+                    },
                   ),
                 ),
                 SizedBox(height: 10.0),
