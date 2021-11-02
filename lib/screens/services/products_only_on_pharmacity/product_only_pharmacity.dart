@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:pharmacity_dart/screens/services/product_detail.dart';
-import 'package:pharmacity_dart/screens/services/show_product_detail.dart';
+import 'package:pharmacity_dart/screens/services/products_only_on_pharmacity/product_detail.dart';
+import 'package:pharmacity_dart/screens/services/products_only_on_pharmacity/show_product_detail.dart';
 
 class PharmacityProductOnly extends StatelessWidget {
   ProductDetail product;
+
   PharmacityProductOnly({required this.product});
 
   @override
@@ -14,7 +15,10 @@ class PharmacityProductOnly extends StatelessWidget {
       width: size.width * 0.45,
       child: OutlinedButton(
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => Detail(product: product)));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => Detail(product: product)));
         },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,19 +39,26 @@ class PharmacityProductOnly extends StatelessWidget {
             ),
             Container(
               height: 20.0,
-              width: 140,
+              width: size.width * 0.3,
               alignment: Alignment.centerLeft,
+              // margin: EdgeInsets.only(left: 10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.0),
                 color: Colors.grey[200],
-                image: DecorationImage(image: AssetImage(product.brand), alignment: Alignment.centerRight),
               ),
-              child: Text(
-                'Thương hiệu',
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 12.0,
-                ),
+              child: Row(
+                children: [
+                  Text(
+                    'Thương hiệu',
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 12.0,
+                    ),
+                  ),
+                  Expanded(
+                    child: Image.asset(product.brand),
+                  ),
+                ],
               ),
             ),
             Container(
@@ -55,6 +66,7 @@ class PharmacityProductOnly extends StatelessWidget {
               child: Text(
                 product.name,
                 maxLines: 2,
+                textAlign: TextAlign.start,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   color: Colors.black,
@@ -70,7 +82,9 @@ class PharmacityProductOnly extends StatelessWidget {
                   color: Colors.red,
                 ),
                 children: <TextSpan>[
-                  TextSpan(text: product.price + ' VND', style: TextStyle(fontWeight: FontWeight.bold)),
+                  TextSpan(
+                      text: product.price + ' VND',
+                      style: TextStyle(fontWeight: FontWeight.bold)),
                   TextSpan(text: 'cái!'),
                 ],
               ),
