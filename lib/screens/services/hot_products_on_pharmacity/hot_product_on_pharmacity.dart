@@ -34,13 +34,30 @@ class PharmacityHotProduct extends StatelessWidget {
                   fit: BoxFit.fill,
                 ),
               ),
-              child: Text(
-                product.discount,
-                style: TextStyle(
-                  color: Colors.red,
-                  fontSize: 17,
-                  fontWeight: FontWeight.bold,
-                ),
+              child: Stack(
+                children: <Widget>[
+                  Positioned(
+                    top: 0.0,
+                    right: 0.0,
+                    child: Container(
+                      height: 30.0,
+                      width: 40.0,
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                      child: Center(
+                        child: Text(
+                          product.discount,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
             Container(
@@ -96,7 +113,7 @@ class PharmacityHotProduct extends StatelessWidget {
                     ),
                   ),
                   TextSpan(
-                    text: 'cái!',
+                    text: '/cái!',
                     style: TextStyle(
                       decoration: TextDecoration.lineThrough,
                     ),
@@ -108,18 +125,18 @@ class PharmacityHotProduct extends StatelessWidget {
             RichText(
               text: TextSpan(
                 style: TextStyle(
-                  fontSize: 17,
+                  fontSize: 16,
                   color: Colors.red,
                 ),
                 children: <TextSpan>[
                   TextSpan(
-                    text: product.discountPrice + ' VND',
+                    text: product.discountPrice + 'VND',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   TextSpan(
-                    text: 'cái!',
+                    text: '/cái!',
                   ),
                 ],
               ),

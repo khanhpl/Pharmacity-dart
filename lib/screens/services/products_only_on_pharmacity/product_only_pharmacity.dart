@@ -78,14 +78,14 @@ class PharmacityProductOnly extends StatelessWidget {
             RichText(
               text: TextSpan(
                 style: TextStyle(
-                  fontSize: 17,
+                  fontSize: 16,
                   color: Colors.red,
                 ),
                 children: <TextSpan>[
                   TextSpan(
                       text: product.price + ' VND',
                       style: TextStyle(fontWeight: FontWeight.bold)),
-                  TextSpan(text: 'cái!'),
+                  TextSpan(text: '/cái!'),
                 ],
               ),
             ),

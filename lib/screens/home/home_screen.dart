@@ -25,10 +25,10 @@ class HomeScreen extends State<MyHomeScreen> {
     ProductDetail(image: 'assets/product4.webp', brand: 'assets/pharmacitybrand.png', name: 'Băng keo cá nhân bằng da', price: '24.000')
   ];
   List<HotProductDetail> _detailHotSaleList = [
-    HotProductDetail(image: 'assets/discount1.webp', brand: 'assets/pharmacitybrand.png',name: 'Bao cao su siêu mỏng hương bạc hà', price: '40.000', discount:'30%', discountPrice:'28.000' ),
-    HotProductDetail(image: 'assets/discount2.webp', brand: 'assets/pharmacitybrand.png',name: 'Bao cao su siêu mỏng hương dâu', price: '40.000', discount:'30%', discountPrice:'28.000' ),
-    HotProductDetail(image: 'assets/discount3.webp', brand: 'assets/pharmacitybrand.png',name: 'Bơm tiêm sử dụng 1 lần Vinahankook(10ml/1cc)', price: '2.100', discount:'30%', discountPrice:'28.000' ),
-    HotProductDetail(image: 'assets/discount4.webp', brand: 'assets/pharmacitybrand.png',name: 'Chai xịt làm lạnh Starblam(150ml)', price: '220.000', discount:'30%', discountPrice:'28.000' ),
+    HotProductDetail(image: 'assets/discount1.webp', brand: 'assets/pharmacitybrand.png',name: 'Bao cao su siêu mỏng hương bạc hà', price: '40.000', discount:'-30%', discountPrice:'28.000' ),
+    HotProductDetail(image: 'assets/discount2.webp', brand: 'assets/pharmacitybrand.png',name: 'Bao cao su siêu mỏng hương dâu', price: '40.000', discount:'-30%', discountPrice:'28.000' ),
+    HotProductDetail(image: 'assets/discount3.webp', brand: 'assets/pharmacitybrand.png',name: 'Bơm tiêm sử dụng 1 lần Vinahankook(10ml/1cc)', price: '2.100', discount:'-30%', discountPrice:'1.470' ),
+    HotProductDetail(image: 'assets/discount4.webp', brand: 'assets/pharmacitybrand.png',name: 'Chai xịt làm lạnh Starblam(150ml)', price: '220.000', discount:'-50%', discountPrice:'110.000' ),
   ];
 
   @override
