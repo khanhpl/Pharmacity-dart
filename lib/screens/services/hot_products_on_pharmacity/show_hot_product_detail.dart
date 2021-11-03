@@ -124,6 +124,31 @@ class _HotDetailState extends State<HotDetail> {
                     fit: BoxFit.fill,
                   ),
                 ),
+                child:Stack(
+                  children: <Widget>[
+                    Positioned(
+                      bottom: 0.0,
+                      left: 0.0,
+                      child: Container(
+                        height: 30.0,
+                        width: 40.0,
+                        decoration: BoxDecoration(
+                          color: Colors.green,
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: Center(
+                          child: Text(
+                            widget.product.discount,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               Container(
                 width: 130.0,
