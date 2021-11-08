@@ -13,7 +13,11 @@ class PharmacityHotProduct extends StatelessWidget {
     return Container(
       height: size.height * 0.5,
       width: size.width * 0.45,
-      child: OutlinedButton(
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey),
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: TextButton(
         onPressed: () {
           Navigator.push(
               context,
