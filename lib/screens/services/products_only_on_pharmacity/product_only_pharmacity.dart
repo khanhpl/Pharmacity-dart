@@ -18,8 +18,6 @@ class PharmacityProductOnly extends StatelessWidget {
         border: Border.all(color: Colors.grey),
         borderRadius: BorderRadius.circular(15),
       ),
-      height: size.height * 0.42,
-
       width: size.width * 0.45,
       child: TextButton(
         onPressed: () {
@@ -30,7 +28,7 @@ class PharmacityProductOnly extends StatelessWidget {
         },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
               height: size.height * 0.17,
@@ -94,9 +92,10 @@ class PharmacityProductOnly extends StatelessWidget {
               ),
             ),
             SizedBox(height: 10.0),
-            SizedBox(
-              width: size.width * 0.35,
+            Container(
+              width: size.width * 0.45,
               height: size.height * 0.06,
+              margin: EdgeInsets.fromLTRB(_edgeInsertLR*0.2, 0, _edgeInsertLR*0.2, 0),
               child: TextButton(
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.green,
