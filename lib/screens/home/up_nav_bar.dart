@@ -24,7 +24,8 @@ AppBar UpAppBar(context) {
                   hintText: 'Tìm Trên Pharmacity',
                   hintStyle: TextStyle(
                     color: Colors.black26,
-                  )),
+                  ),
+              ),
             ),
           ),
         ],

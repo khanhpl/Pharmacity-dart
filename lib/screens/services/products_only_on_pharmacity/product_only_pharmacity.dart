@@ -13,11 +13,13 @@ class PharmacityProductOnly extends StatelessWidget {
     var _edgeInsertLR = size.width*0.03;
     var _edgeInsertTB = size.height * 0.03;
     return Container(
+
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey),
         borderRadius: BorderRadius.circular(15),
       ),
-      height: size.height * 0.5,
+      height: size.height * 0.42,
+
       width: size.width * 0.45,
       child: TextButton(
         onPressed: () {
@@ -28,10 +30,10 @@ class PharmacityProductOnly extends StatelessWidget {
         },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Container(
-              height: size.height * 0.2,
+              height: size.height * 0.17,
               width: size.width * 0.4,
               decoration: BoxDecoration(
                 image: DecorationImage(
@@ -93,8 +95,8 @@ class PharmacityProductOnly extends StatelessWidget {
             ),
             SizedBox(height: 10.0),
             SizedBox(
-              width: 180,
-              height: 40,
+              width: size.width * 0.35,
+              height: size.height * 0.06,
               child: TextButton(
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.green,
@@ -103,7 +105,7 @@ class PharmacityProductOnly extends StatelessWidget {
                 child: Text(
                   'Thêm vào giỏ hàng',
                   style: TextStyle(
-                    fontSize: 11.0,
+                    fontSize: 11,
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),

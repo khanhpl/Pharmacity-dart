@@ -148,7 +148,7 @@ class PharmacityHotProduct extends StatelessWidget {
             SizedBox(height: 10.0),
             SizedBox(
               width: 180,
-              height: 40,
+              height: size.height * 0.06,
               child: TextButton(
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.green,

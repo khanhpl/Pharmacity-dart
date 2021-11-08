@@ -241,7 +241,7 @@ class HomeScreen extends State<MyHomeScreen> {
                 SizedBox(height: _edgeInsertTB*0.8),
                 Container(
                   // color: Colors.black,
-                  height: size.height * 0.46,
+                  // height: size.height * 0.46,
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
@@ -508,8 +508,8 @@ class HomeScreen extends State<MyHomeScreen> {
                 ),
                 SizedBox(height: _edgeInsertTB),
                 Container(
-                  margin: EdgeInsets.only(left: 10),
-                  height: size.height * 0.5,
+                  margin: EdgeInsets.only(left: _edgeInsertLR),
+                  height: size.height * 0.42,
                   child:ListView.separated(
                     scrollDirection: Axis.horizontal,
                     itemCount: _detailList.length,
@@ -537,8 +537,8 @@ class HomeScreen extends State<MyHomeScreen> {
                 ),
                 SizedBox(height: _edgeInsertTB),
                 Container(
-                  margin: EdgeInsets.only(left: 10),
-                  height: size.height * 0.5,
+                  margin: EdgeInsets.only(left: _edgeInsertLR),
+                  height: size.height * 0.47,
                   child:ListView.separated(
                     scrollDirection: Axis.horizontal,
                     itemCount: _detailHotSaleList.length,
