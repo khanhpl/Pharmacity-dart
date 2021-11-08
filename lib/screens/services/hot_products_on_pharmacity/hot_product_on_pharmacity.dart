@@ -10,6 +10,9 @@ class PharmacityHotProduct extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+
+    var _edgeInsertLR = size.width*0.03;
+    var _edgeInsertTB = size.height * 0.03;
     return Container(
       height: size.height * 0.5,
       width: size.width * 0.45,
@@ -146,9 +149,10 @@ class PharmacityHotProduct extends StatelessWidget {
               ),
             ),
             SizedBox(height: 10.0),
-            SizedBox(
-              width: 180,
+            Container(
+              width: size.width * 0.45,
               height: size.height * 0.06,
+              margin: EdgeInsets.fromLTRB(_edgeInsertLR*0.2, 0, _edgeInsertLR*0.2, 0),
               child: TextButton(
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.green,
@@ -157,7 +161,7 @@ class PharmacityHotProduct extends StatelessWidget {
                 child: Text(
                   'Thêm vào giỏ hàng',
                   style: TextStyle(
-                    fontSize: 11.0,
+                    fontSize: 11,
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),
