@@ -14,11 +14,12 @@ class PharmacityProductOnly extends StatelessWidget {
     var _edgeInsertTB = size.height * 0.03;
     return Container(
       decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey),
         borderRadius: BorderRadius.circular(15),
       ),
       height: size.height * 0.5,
       width: size.width * 0.45,
-      child: OutlinedButton(
+      child: TextButton(
         onPressed: () {
           Navigator.push(
               context,
