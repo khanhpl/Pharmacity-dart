@@ -15,6 +15,8 @@ class _HotDetailState extends State<HotDetail> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    var _edgeInsertLR = size.width*0.03;
+    var _edgeInsertTB = size.height * 0.03;
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(
@@ -78,7 +80,7 @@ class _HotDetailState extends State<HotDetail> {
                 margin: EdgeInsets.only(left: size.width * 0.05),
                 decoration: BoxDecoration(
                   color: Colors.green,
-                  borderRadius: BorderRadius.circular(15.0),
+                  borderRadius: BorderRadius.circular(5.0),
                   border: Border.all(color: Colors.green),
                 ),
                 child: TextButton(

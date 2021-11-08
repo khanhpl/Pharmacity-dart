@@ -34,6 +34,8 @@ class HomeScreen extends State<MyHomeScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    var _edgeInsertLR = size.width*0.03;
+    var _edgeInsertTB = size.height * 0.03;
     return Scaffold(
       appBar: UpAppBar(context),
       body: Container(
@@ -53,6 +55,7 @@ class HomeScreen extends State<MyHomeScreen> {
             scrollDirection: Axis.vertical,
             child: Column(
               children: <Widget>[
+                SizedBox(height: _edgeInsertTB),
                 Container(
                   height: size.height * 0.10,
                   decoration: BoxDecoration(
@@ -63,26 +66,35 @@ class HomeScreen extends State<MyHomeScreen> {
                       topRight: Radius.circular(50),
                       bottomRight: Radius.circular(50),
                     ),
-                    image: DecorationImage(
-                        image: AssetImage('assets/phouse.png'),
-                        fit: BoxFit.fitHeight,
-                        alignment: Alignment.centerLeft),
+                    // image: DecorationImage(
+                    //     image: AssetImage('assets/phouse.png'),
+                    //     fit: BoxFit.fitHeight,
+                    //     alignment: Alignment.centerLeft),
                   ),
-                  margin: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 0),
+                  margin: EdgeInsets.fromLTRB(_edgeInsertLR, 0, _edgeInsertLR, 0),
                   child: FlatButton(
                     onPressed: () {
                       Navigator.pushNamed(context, '/phouseSystem');
                     },
                     child: Row(
                       children: <Widget>[
-                        SizedBox(width: 80),
+                        Container(
+                          height: size.height * 0.10,
+                          width: size.width* 0.25,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage('assets/phouse.png'),
+                                fit: BoxFit.fitHeight,
+                                alignment: Alignment.center),
+                          ),
+                        ),
                         Text(
                           '635 nhà thuốc trên toàn quốc',
                           style: TextStyle(
                             color: Colors.white,
                           ),
                         ),
-                        Spacer(),
+                        Spacer(flex: 3),
                         Icon(
                           Icons.arrow_forward_ios,
                           color: Colors.white,
@@ -91,8 +103,10 @@ class HomeScreen extends State<MyHomeScreen> {
                     ),
                   ),
                 ),
+
+                SizedBox(height: _edgeInsertTB),
                 Container(
-                  margin: EdgeInsets.all(10.0),
+                  margin: EdgeInsets.fromLTRB(_edgeInsertLR, 0, _edgeInsertLR, 0),
                   height: size.height * 0.2,
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -103,11 +117,12 @@ class HomeScreen extends State<MyHomeScreen> {
                   ),
                   child: CaroselImage,
                 ),
-                SizedBox(height: 5.0),
+
+                SizedBox(height: _edgeInsertTB),
                 Container(
                   alignment: Alignment.centerLeft,
                   margin: EdgeInsets.only(
-                    left: 10.0,
+                    left: _edgeInsertLR,
                   ),
                   child: Text(
                     'Dịch vụ yêu thích',
@@ -117,13 +132,15 @@ class HomeScreen extends State<MyHomeScreen> {
                     ),
                   ),
                 ),
+                SizedBox(height: _edgeInsertTB*0.8),
+
                 Container(
-                  height: size.height * 0.2,
+                  // height: size.height * 0.15,
                   // color: Colors.green,
+                  height: 100,
                   margin: EdgeInsets.only(
-                    left: 10.0,
-                    top: 10.0,
-                    right: 10.0,
+                    left: _edgeInsertLR,
+                    right: _edgeInsertLR,
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -206,10 +223,12 @@ class HomeScreen extends State<MyHomeScreen> {
                     ],
                   ),
                 ),
+
+                SizedBox(height: _edgeInsertTB),
                 Container(
                   alignment: Alignment.centerLeft,
                   margin: EdgeInsets.only(
-                    left: 10.0,
+                    left: _edgeInsertLR,
                   ),
                   child: Text(
                     'Danh mục sản phẩm',
@@ -219,13 +238,14 @@ class HomeScreen extends State<MyHomeScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 10.0),
+                SizedBox(height: _edgeInsertTB*0.8),
                 Container(
                   // color: Colors.black,
-                  height: size.height * 0.45,
+                  height: size.height * 0.46,
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Column(
                           children: <Widget>[
@@ -235,7 +255,8 @@ class HomeScreen extends State<MyHomeScreen> {
                                 children: <Widget>[
                                   Container(
                                     height: size.height * 0.14,
-                                    width: size.width * 0.25,
+                                    // width: size.width * 0.25,
+                                    width: size.width * 0.20,
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
                                         image: AssetImage('assets/duocpham.png'),
@@ -245,7 +266,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                   ),
                                   Container(
                                     height: size.height * 0.06,
-                                    width: size.width * 0.25,
+                                    width: size.width * 0.2,
                                     child: Text(
                                       'Dược phẩm',
                                       textAlign: TextAlign.center,
@@ -263,7 +284,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                 children: <Widget>[
                                   Container(
                                     height: size.height * 0.14,
-                                    width: size.width * 0.25,
+                                    width: size.width * 0.2,
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
                                         image: AssetImage('assets/thucphamchucnang.png'),
@@ -273,7 +294,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                   ),
                                   Container(
                                     height: size.height * 0.06,
-                                    width: size.width * 0.25,
+                                    width: size.width * 0.2,
                                     child: Text(
                                       'Thực phẩm chức năng',
                                       textAlign: TextAlign.center,
@@ -295,7 +316,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                 children: <Widget>[
                                   Container(
                                     height: size.height * 0.14,
-                                    width: size.width * 0.25,
+                                    width: size.width * 0.2,
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
                                         image: AssetImage('assets/chamsocsuckhoe.png'),
@@ -305,7 +326,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                   ),
                                   Container(
                                     height: size.height * 0.06,
-                                    width: size.width * 0.25,
+                                    width: size.width * 0.2,
                                     child: Text(
                                       'Chăm sóc sức khỏe',
                                       textAlign: TextAlign.center,
@@ -323,7 +344,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                 children: <Widget>[
                                   Container(
                                     height: size.height * 0.14,
-                                    width: size.width * 0.25,
+                                    width: size.width * 0.2,
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
                                         image: AssetImage('assets/mevabe.png'),
@@ -333,7 +354,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                   ),
                                   Container(
                                     height: size.height * 0.06,
-                                    width: size.width * 0.25,
+                                    width: size.width * 0.2,
                                     child: Text(
                                       'Mẹ và Bé',
                                       textAlign: TextAlign.center,
@@ -355,7 +376,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                 children: <Widget>[
                                   Container(
                                     height: size.height * 0.14,
-                                    width: size.width * 0.25,
+                                    width: size.width * 0.2,
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
                                         image: AssetImage('assets/chamsoccanhan.png'),
@@ -365,7 +386,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                   ),
                                   Container(
                                     height: size.height * 0.06,
-                                    width: size.width * 0.25,
+                                    width: size.width * 0.2,
                                     child: Text(
                                       'Chăm sóc cá nhân',
                                       textAlign: TextAlign.center,
@@ -383,7 +404,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                 children: <Widget>[
                                   Container(
                                     height: size.height * 0.14,
-                                    width: size.width * 0.25,
+                                    width: size.width * 0.2,
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
                                         image: AssetImage('assets/chamsocsacdep.png'),
@@ -393,7 +414,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                   ),
                                   Container(
                                     height: size.height * 0.06,
-                                    width: size.width * 0.25,
+                                    width: size.width * 0.2,
                                     child: Text(
                                       'Chăm sóc sắc đẹp',
                                       textAlign: TextAlign.center,
@@ -415,7 +436,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                 children: <Widget>[
                                   Container(
                                     height: size.height * 0.14,
-                                    width: size.width * 0.25,
+                                    width: size.width * 0.2,
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
                                         image: AssetImage('assets/sanphamtienloi.png'),
@@ -425,7 +446,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                   ),
                                   Container(
                                     height: size.height * 0.06,
-                                    width: size.width * 0.25,
+                                    width: size.width * 0.2,
                                     child: Text(
                                       'Sản phẩm tiện lợi',
                                       textAlign: TextAlign.center,
@@ -443,7 +464,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                 children: <Widget>[
                                   Container(
                                     height: size.height * 0.14,
-                                    width: size.width * 0.25,
+                                    width: size.width * 0.2,
                                     decoration: BoxDecoration(
                                       image: DecorationImage(
                                         image: AssetImage('assets/thietbiyte.png'),
@@ -453,7 +474,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                   ),
                                   Container(
                                     height: size.height * 0.06,
-                                    width: size.width * 0.25,
+                                    width: size.width * 0.2,
                                     child: Text(
                                       'Thiết bị y tế',
                                       textAlign: TextAlign.center,
@@ -471,11 +492,11 @@ class HomeScreen extends State<MyHomeScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 10.0),
+                SizedBox(height: _edgeInsertTB*0.5),
                 Container(
                   alignment: Alignment.centerLeft,
                   margin: EdgeInsets.only(
-                    left: 10.0,
+                    left: _edgeInsertLR,
                   ),
                   child: Text(
                     'Chỉ có tại Pharmacity',
@@ -485,7 +506,7 @@ class HomeScreen extends State<MyHomeScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 10.0),
+                SizedBox(height: _edgeInsertTB),
                 Container(
                   margin: EdgeInsets.only(left: 10),
                   height: size.height * 0.5,
@@ -500,11 +521,11 @@ class HomeScreen extends State<MyHomeScreen> {
                     },
                   ),
                 ),
-                SizedBox(height: 10.0),
+                SizedBox(height: _edgeInsertTB),
                 Container(
                   alignment: Alignment.centerLeft,
                   margin: EdgeInsets.only(
-                    left: 10.0,
+                    left: _edgeInsertLR,
                   ),
                   child: Text(
                     'Săn deal giá rẻ - bảo vệ sức khỏe',
@@ -514,7 +535,7 @@ class HomeScreen extends State<MyHomeScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 10.0),
+                SizedBox(height: _edgeInsertTB),
                 Container(
                   margin: EdgeInsets.only(left: 10),
                   height: size.height * 0.5,
@@ -529,11 +550,11 @@ class HomeScreen extends State<MyHomeScreen> {
                     },
                   ),
                 ),
-                SizedBox(height: 10.0),
+                SizedBox(height: _edgeInsertTB),
                 Container(
                   // alignment: Alignment.centerLeft,
                   margin: EdgeInsets.only(
-                    left: 10.0,
+                    left: _edgeInsertLR,
                   ),
                   child: Row(
                     children: <Widget>[
@@ -562,9 +583,9 @@ class HomeScreen extends State<MyHomeScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 10.0),
+                SizedBox(height: _edgeInsertTB),
                 Container(
-                  height: size.height * 0.15,
+                  height: size.height * 0.16,
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(

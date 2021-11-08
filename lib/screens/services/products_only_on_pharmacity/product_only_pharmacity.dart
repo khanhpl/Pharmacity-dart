@@ -10,7 +10,12 @@ class PharmacityProductOnly extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    var _edgeInsertLR = size.width*0.03;
+    var _edgeInsertTB = size.height * 0.03;
     return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+      ),
       height: size.height * 0.5,
       width: size.width * 0.45,
       child: OutlinedButton(
@@ -27,9 +32,6 @@ class PharmacityProductOnly extends StatelessWidget {
             Container(
               height: size.height * 0.2,
               width: size.width * 0.4,
-              // margin: EdgeInsets.only(
-              //   left: 10.0,
-              // ),
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(product.image),
@@ -41,7 +43,6 @@ class PharmacityProductOnly extends StatelessWidget {
               height: 20.0,
               width: size.width * 0.3,
               alignment: Alignment.centerLeft,
-              // margin: EdgeInsets.only(left: 10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.0),
                 color: Colors.grey[200],

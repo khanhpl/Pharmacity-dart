@@ -49,7 +49,7 @@ class PharmacityHotProduct extends StatelessWidget {
               alignment: Alignment.centerLeft,
               // margin: EdgeInsets.only(left: 10),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5.0),
+                borderRadius: BorderRadius.circular(15.0),
                 color: Colors.grey[200],
               ),
               child: Row(
