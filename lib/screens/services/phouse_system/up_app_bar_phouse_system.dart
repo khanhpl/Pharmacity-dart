@@ -5,17 +5,17 @@ AppBar UpAppBarPHouseSystem(context) {
   var pageWidth = MediaQuery.of(context).size.width;
   var pageHeight = MediaQuery.of(context).size.height;
   return AppBar(
-    backgroundColor: Colors.blue[700],
+    backgroundColor: Theme.of(context).primaryColor,
     title: Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
           width: pageWidth,
           child: Text(
             'Hệ thống nhà thuốc Pharmacity',
-            textAlign: TextAlign.center,
             style: TextStyle(
               color: Colors.white,
-              fontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w600,
             ),
           ),
         ),

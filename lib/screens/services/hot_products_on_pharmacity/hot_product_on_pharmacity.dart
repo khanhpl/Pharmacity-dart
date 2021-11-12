@@ -9,17 +9,17 @@ class PharmacityHotProduct extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    var _edgeInsertLR = MediaQuery.of(context).size.width * 0.03;
+    var _edgeInsertTB = MediaQuery.of(context).size.height * 0.03;
 
-    var _edgeInsertLR = size.width*0.03;
-    var _edgeInsertTB = size.height * 0.03;
+    var _pageWidth = MediaQuery.of(context).size.width;
+    var _pageHeight = MediaQuery.of(context).size.height;
     return Container(
-      height: size.height * 0.5,
-      width: size.width * 0.45,
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey),
         borderRadius: BorderRadius.circular(15),
       ),
+      width: _pageWidth * 0.45,
       child: TextButton(
         onPressed: () {
           Navigator.push(
@@ -32,9 +32,8 @@ class PharmacityHotProduct extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              height: size.height * 0.2,
-              width: size.width * 0.4,
-              alignment: Alignment.topRight,
+              height: _pageHeight * 0.17,
+              width: _pageWidth * 0.4,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(product.image),
@@ -47,18 +46,18 @@ class PharmacityHotProduct extends StatelessWidget {
                     top: 0.0,
                     right: 0.0,
                     child: Container(
-                      height: 30.0,
-                      width: 40.0,
+                      height: _pageHeight*0.03,
+                      width: _pageWidth*0.45*0.25,
                       decoration: BoxDecoration(
                         color: Colors.red,
-                        borderRadius: BorderRadius.circular(10.0),
+                        borderRadius: BorderRadius.circular(15.0),
                       ),
                       child: Center(
                         child: Text(
                           product.discount,
                           style: TextStyle(
                             color: Colors.white,
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
                       ),
@@ -68,31 +67,69 @@ class PharmacityHotProduct extends StatelessWidget {
               ),
             ),
             Container(
-              height: 20.0,
-              width: size.width * 0.3,
+              height: _pageHeight * 0.03,
               alignment: Alignment.centerLeft,
-              // margin: EdgeInsets.only(left: 10),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15.0),
-                color: Colors.grey[200],
-              ),
               child: Row(
                 children: [
-                  Text(
-                    'Thương hiệu',
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 12.0,
+                  Container(
+                    height: _pageHeight * 0.03,
+                    width: _edgeInsertLR * 0.33,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          bottomLeft: Radius.circular(10)),
+                      color: Color.fromRGBO(185, 223, 255, 1),
                     ),
                   ),
-                  Expanded(
-                    child: Image.asset(product.brand),
+                  Container(
+                    height: _pageHeight * 0.03,
+                    decoration: BoxDecoration(
+                      color: Color.fromRGBO(185, 223, 255, 1),
+                    ),
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Thương hiệu',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.black45,
+                        fontWeight: FontWeight.w400,
+                        fontSize: _pageHeight * 0.03 * 0.5,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: _pageHeight * 0.03,
+                    width: _edgeInsertLR * 0.33,
+                    decoration: BoxDecoration(
+                      color: Color.fromRGBO(185, 223, 255, 1),
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Color.fromRGBO(185, 223, 255, 1),
+                    ),
+                    child: Image.asset(
+                      product.brand,
+                      height: _pageHeight * 0.03,
+                      width: _pageWidth * 0.45 * 0.22,
+                    ),
+                  ),
+                  Container(
+                    height: _pageHeight * 0.03,
+                    width: _edgeInsertLR * 0.33,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(10),
+                          bottomRight: Radius.circular(10)),
+                      color: Color.fromRGBO(185, 223, 255, 1),
+                    ),
                   ),
                 ],
               ),
             ),
+            SizedBox(height: _pageHeight * 0.01),
             Container(
-              height: 35.0,
+              height: _pageHeight * 0.05,
               child: Text(
                 product.name,
                 maxLines: 2,
@@ -100,70 +137,77 @@ class PharmacityHotProduct extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   color: Colors.black,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w400,
+                  fontSize: _pageHeight * 0.018,
                 ),
               ),
             ),
-            // SizedBox(height: 20.0),
-            RichText(
-              text: TextSpan(
-                style: TextStyle(
-                  fontSize: 13,
-                  color: Colors.grey,
-                ),
-                children: <TextSpan>[
-                  TextSpan(
-                    text: product.price + ' VND',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      decoration: TextDecoration.lineThrough,
-                    ),
-                  ),
-                  TextSpan(
-                    text: '/cái!',
-                    style: TextStyle(
-                      decoration: TextDecoration.lineThrough,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 10),
-            RichText(
-              text: TextSpan(
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.red,
-                ),
-                children: <TextSpan>[
-                  TextSpan(
-                    text: product.discountPrice + 'VND',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  TextSpan(
-                    text: '/cái!',
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 10.0),
+            SizedBox(height: _pageHeight * 0.003),
             Container(
-              width: size.width * 0.45,
-              height: size.height * 0.06,
-              margin: EdgeInsets.fromLTRB(_edgeInsertLR*0.2, 0, _edgeInsertLR*0.2, 0),
+              height: _pageHeight*0.022,
+              child: RichText(
+                text: TextSpan(
+                  style: TextStyle(
+                    fontSize: _pageHeight*0.018,
+                    color: Colors.grey,
+                  ),
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: product.price + ' VND',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        decoration: TextDecoration.lineThrough,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: _pageHeight * 0.006),
+            Container(
+              height: _pageHeight * 0.04,
+              child: RichText(
+                text: TextSpan(
+                  style: TextStyle(
+                    fontSize: _pageHeight * 0.025,
+                    color: Colors.red.shade700,
+                  ),
+                  children: <TextSpan>[
+                    TextSpan(
+                        text: product.price + ' VND',
+                        style: TextStyle(fontWeight: FontWeight.bold)),
+                    TextSpan(
+                        text: '/cái!',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: _pageHeight * 0.022,
+                        ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: _pageHeight * 0.015),
+            Container(
+              height: _pageHeight * 0.045,
+              width: _pageWidth,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+              ),
               child: TextButton(
                 style: TextButton.styleFrom(
-                  backgroundColor: Colors.green,
+                  backgroundColor: Colors.green.shade700,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
                 ),
                 onPressed: () {},
                 child: Text(
                   'Thêm vào giỏ hàng',
                   style: TextStyle(
-                    fontSize: 11,
+                    fontSize: _pageHeight * 0.045 * 0.3,
                     color: Colors.white,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
               ),
