@@ -26,7 +26,7 @@ AppBar UpAppBar(context) {
               Container(
                 child: Icon(
                   Icons.search,
-                  color: Colors.black87,
+                  color: Colors.grey[400],
                 ),
                 margin: EdgeInsets.only(left: 10),
               ),
@@ -61,7 +61,7 @@ AppBar UpAppBar(context) {
               Container(
                 width: _pageWidth*0.08,
                 child: IconButton(
-                  icon: Icon(Icons.shopping_cart_outlined),
+                  icon: Icon(FontAwesome.basket),
                   onPressed: () {
                     Navigator.pushNamed(context, '/shoppingCart');
                   },

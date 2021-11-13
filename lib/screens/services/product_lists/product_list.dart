@@ -112,49 +112,6 @@ class _ProductListState extends State<ProductList> {
     var _pageWidth = MediaQuery.of(context).size.width;
     var _pageHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      // appBar: AppBar(
-      //   // toolbarHeight: size.height * 0.15,
-      //   backgroundColor: Theme.of(context).primaryColor,
-      //   title: Container(
-      //     height: 40,
-      //     margin: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
-      //     padding: EdgeInsets.fromLTRB(0, 5.0, 0, 5.0),
-      //     decoration: BoxDecoration(
-      //       color: Colors.white,
-      //       borderRadius: BorderRadius.circular(10.0),
-      //     ),
-      //     child: Row(
-      //       crossAxisAlignment: CrossAxisAlignment.center,
-      //       children: <Widget>[
-      //         IconButton(
-      //           alignment: Alignment.center,
-      //           iconSize: 30.0,
-      //           color: Colors.grey[400],
-      //           icon: Icon(Icons.search),
-      //           onPressed: () {},
-      //         ),
-      //         Expanded(
-      //           child: Text(
-      //             'Tìm trên Pharmacity',
-      //             style: TextStyle(
-      //               color: Colors.black26,
-      //               fontSize: 16.0,
-      //             ),
-      //             textAlign: TextAlign.center,
-      //           ),
-      //         ),
-      //       ],
-      //     ),
-      //   ),
-      //   actions: <Widget>[
-      //     IconButton(
-      //       icon: Icon(FontAwesome.basket),
-      //       onPressed: () {
-      //         Navigator.pushNamed(context, '/shoppingCart');
-      //       },
-      //     ),
-      //   ],
-      // ),
       appBar: AppBar(
         backgroundColor: Theme
             .of(context)
@@ -175,7 +132,7 @@ class _ProductListState extends State<ProductList> {
                   Container(
                     child: Icon(
                       Icons.search,
-                      color: Colors.black87,
+                      color: Colors.grey.shade400,
                     ),
                     margin: EdgeInsets.only(left: 10),
                   ),
@@ -194,7 +151,7 @@ class _ProductListState extends State<ProductList> {
             Container(
               width: _pageWidth * 0.08,
               child: IconButton(
-                icon: Icon(Icons.shopping_cart_outlined),
+                icon: Icon(FontAwesome.basket),
                 onPressed: () {
                   Navigator.pushNamed(context, '/shoppingCart');
                 },
