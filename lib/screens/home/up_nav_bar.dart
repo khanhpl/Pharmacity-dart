@@ -35,6 +35,9 @@ AppBar UpAppBar(context) {
                   child: TextField(
                     decoration: InputDecoration.collapsed(
                       hintText: 'Tìm trên Pharmacity',
+                      hintStyle: TextStyle(
+                        color: Colors.grey.shade400,
+                      ),
                     ),
                   ),
                 ),
