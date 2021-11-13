@@ -12,9 +12,11 @@ class _MyAccountSettingState extends State<MyAccountSetting> {
   Widget build(BuildContext context) {
     var _pageHeight = MediaQuery.of(context).size.height;
     var _pageWidth = MediaQuery.of(context).size.width;
+
+    var _themeColor = Theme.of(context).primaryColor;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue[700],
+        backgroundColor: _themeColor,
         centerTitle: true,
         title: Container(
           child: Text('Cài đặt'),
@@ -24,7 +26,7 @@ class _MyAccountSettingState extends State<MyAccountSetting> {
       body: Material(
         child: Container(
           decoration: BoxDecoration(
-            color: Colors.blue[700],
+            color: _themeColor,
           ),
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
