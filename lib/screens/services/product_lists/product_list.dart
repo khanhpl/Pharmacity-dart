@@ -103,7 +103,7 @@ class _ProductListState extends State<ProductList> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: size.height * 0.15,
+        // toolbarHeight: size.height * 0.15,
         backgroundColor: Theme.of(context).primaryColor,
         title: Container(
           height: 40,
@@ -114,19 +114,23 @@ class _ProductListState extends State<ProductList> {
             borderRadius: BorderRadius.circular(10.0),
           ),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               IconButton(
+                alignment: Alignment.center,
+                iconSize: 30.0,
                 color: Colors.grey[400],
                 icon: Icon(Icons.search),
                 onPressed: () {},
               ),
               Expanded(
-                child: TextField(
-                  decoration: InputDecoration(
-                      hintText: 'Tìm Trên Pharmacity',
-                      hintStyle: TextStyle(
-                        color: Colors.black26,
-                      )),
+                child: Text(
+                  'Tìm trên Pharmacity',
+                  style: TextStyle(
+                    color: Colors.black26,
+                    fontSize: 16.0,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
               ),
             ],
@@ -285,11 +289,12 @@ class SpecificItem extends StatelessWidget {
       height: size.height * 0.20,
       width: size.width * 0.25,
       child: TextButton(
+
         onPressed: () {},
         child: Column(
           children: <Widget>[
             Container(
-              height: size.height * 0.1,
+              height: size.height * 0.09,
               width: size.width * 0.20,
               decoration: BoxDecoration(
                 // border: Border.all(color: Colors.grey),
@@ -308,6 +313,7 @@ class SpecificItem extends StatelessWidget {
               softWrap: true,
               style: TextStyle(
                 color: Colors.black,
+                fontSize: 11.0,
               ),
             ),
           ],
