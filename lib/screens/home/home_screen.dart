@@ -80,26 +80,21 @@ class HomeScreen extends State<MyHomeScreen> {
         discountPrice: '110.000'),
   ];
   List<Brand> _brandList = [
-    Brand(image:'assets/pharmacity.png',name: 'Pharmacity'),
-    Brand(image:'assets/abbott.png',name: 'Abbott'),
-    Brand(image:'assets/microlife.png',name: 'Microlife'),
-    Brand(image:'assets/blackmores.png',name: 'Blackmores'),
-    Brand(image:'assets/pediasure.png',name: 'PediaSure'),
-    Brand(image:'assets/loreal.jpg',name: 'L\'oreal'),
-
+    Brand(image: 'assets/pharmacity.png', name: 'Pharmacity'),
+    Brand(image: 'assets/abbott.png', name: 'Abbott'),
+    Brand(image: 'assets/microlife.png', name: 'Microlife'),
+    Brand(image: 'assets/blackmores.png', name: 'Blackmores'),
+    Brand(image: 'assets/pediasure.png', name: 'PediaSure'),
+    Brand(image: 'assets/loreal.jpg', name: 'L\'oreal'),
   ];
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery
-        .of(context)
-        .size;
+    Size size = MediaQuery.of(context).size;
     var _edgeInsertLR = size.width * 0.03;
     var _edgeInsertTB = size.height * 0.03;
 
-    var _themeColor = Theme
-        .of(context)
-        .primaryColor;
+    var _themeColor = Theme.of(context).primaryColor;
     return Scaffold(
       appBar: UpAppBar(context),
       backgroundColor: _themeColor,
@@ -145,14 +140,14 @@ class HomeScreen extends State<MyHomeScreen> {
                         text: TextSpan(
                           text: '635 ',
                           style: TextStyle(
-                            fontSize: size.height * 0.06 *0.4,
+                            fontSize: size.height * 0.06 * 0.4,
                             fontWeight: FontWeight.w400,
                           ),
                           children: [
                             TextSpan(
                               text: 'nhà thuốc trên toàn quốc',
                               style: TextStyle(
-                                fontSize: size.height * 0.06 *0.35,
+                                fontSize: size.height * 0.06 * 0.35,
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -214,7 +209,6 @@ class HomeScreen extends State<MyHomeScreen> {
                                 'assets/favoriteServices/coupon.png',
                                 width: size.width * 0.3 * 0.33,
                                 height: size.width * 0.3 * 0.33,
-
                               ),
                               style: ElevatedButton.styleFrom(
                                 shape: CircleBorder(),
@@ -283,7 +277,6 @@ class HomeScreen extends State<MyHomeScreen> {
                           ),
                         ],
                       ),
-
                     ),
 
                     //Row2
@@ -294,7 +287,6 @@ class HomeScreen extends State<MyHomeScreen> {
                           //Thẻ thành viên
                           Container(
                             child: ElevatedButton(
-
                               onPressed: () {},
                               child: Image.asset(
                                 'assets/favoriteServices/member-card.png',
@@ -334,7 +326,6 @@ class HomeScreen extends State<MyHomeScreen> {
                           //Tổng đài đặt hàng
                           Container(
                             child: ElevatedButton(
-
                               onPressed: () {},
                               child: Image.asset(
                                 'assets/favoriteServices/hotline.png',
@@ -380,7 +371,6 @@ class HomeScreen extends State<MyHomeScreen> {
                           //Tư vấn trực tuyến
                           Container(
                             child: ElevatedButton(
-
                               onPressed: () {},
                               child: Image.asset(
                                 'assets/favoriteServices/chat-online.png',
@@ -727,7 +717,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                   decoration: BoxDecoration(
                                     image: DecorationImage(
                                       image:
-                                      AssetImage('assets/thietbiyte.png'),
+                                          AssetImage('assets/thietbiyte.png'),
                                       fit: BoxFit.fill,
                                     ),
                                   ),
@@ -773,7 +763,6 @@ class HomeScreen extends State<MyHomeScreen> {
               Container(
                 margin: EdgeInsets.only(left: _edgeInsertLR),
                 height: size.height * 0.405,
-
                 child: ListView.separated(
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
@@ -785,7 +774,6 @@ class HomeScreen extends State<MyHomeScreen> {
                     return PharmacityProductOnly(product: _detailList[index]);
                   },
                 ),
-
               ),
               SizedBox(height: _edgeInsertTB),
               Container(
@@ -847,29 +835,28 @@ class HomeScreen extends State<MyHomeScreen> {
                     ),
                   ],
                 ),
-
-                SizedBox(height: _edgeInsertTB),
-                Container(
-                  margin: EdgeInsets.fromLTRB(10.0, 0, 10.0, 0),
-                  height: size.height * 0.2,
-                  child: ListView.separated(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: _brandList.length,
-                    separatorBuilder: (BuildContext context, int index) {
-                      return SizedBox(width: 10.0);
-                    },
-                    itemBuilder: (BuildContext context, int index) {
-                      return SpecificBrand(brand: _brandList[index],);
-                    },
-
-                  ),
+              ),
+              SizedBox(height: _edgeInsertTB),
+              Container(
+                margin: EdgeInsets.fromLTRB(10.0, 0, 10.0, 0),
+                height: size.height * 0.2,
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: _brandList.length,
+                  separatorBuilder: (BuildContext context, int index) {
+                    return SizedBox(width: 10.0);
+                  },
+                  itemBuilder: (BuildContext context, int index) {
+                    return SpecificBrand(
+                      brand: _brandList[index],
+                    );
+                  },
                 ),
               ),
             ],
           ),
         ),
       ),
-
     );
   }
 }
