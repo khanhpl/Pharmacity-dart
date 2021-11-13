@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttericon/font_awesome_icons.dart';
 import 'product.dart';
 
 class ProductList extends StatefulWidget {
@@ -103,7 +104,7 @@ class _ProductListState extends State<ProductList> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: size.height * 0.15,
-        backgroundColor: Colors.blue[700],
+        backgroundColor: Theme.of(context).primaryColor,
         title: Container(
           height: 40,
           margin: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
@@ -133,7 +134,7 @@ class _ProductListState extends State<ProductList> {
         ),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.shopping_cart_outlined),
+            icon: Icon(FontAwesome.basket),
             onPressed: () {
               Navigator.pushNamed(context, '/shoppingCart');
             },
@@ -165,9 +166,9 @@ class _ProductListState extends State<ProductList> {
                         ),
                         AnimatedContainer(
                           duration: Duration(milliseconds: 100),
-                          color: Colors.red,
+                          color: Theme.of(context).primaryColor,
                           height: (_selectedIndex == index) ? size.height * 0.17 : 0,
-                          width: (_selectedIndex == index) ? 5 : 0,
+                          width: (_selectedIndex == index) ? 2.5 : 0,
                         ),
                       ],
                     ),

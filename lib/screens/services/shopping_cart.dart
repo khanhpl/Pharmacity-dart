@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttericon/font_awesome_icons.dart';
 import '../home/up_nav_bar.dart';
 import '../home/main_page.dart';
 
@@ -9,7 +10,7 @@ class ShoppingCartPage extends StatelessWidget {
     var pageHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue[700],
+        backgroundColor: Theme.of(context).primaryColor,
         centerTitle: true,
         title: Text(
           'Giỏ hàng của bạn',
@@ -26,15 +27,22 @@ class ShoppingCartPage extends StatelessWidget {
             SizedBox(height: pageHeight * 0.15),
             Container(
               child: Icon(
-                Icons.shopping_cart_outlined,
-                color: Colors.grey,
-                size: 250,
+                FontAwesome.basket,
+                color: Colors.black26,
+                size: 200,
               ),
             ),
             Container(
               child: Column(
                 children: [
-                  Text('Bạn chưa có sản phẩm nào trong giỏ hàng.'),
+                  Text('Bạn chưa có sản phẩm nào trong giỏ hàng.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.black26,
+                      fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ],
               ),
             ),

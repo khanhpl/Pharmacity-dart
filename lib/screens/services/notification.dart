@@ -9,7 +9,7 @@ class NotificationPage extends StatelessWidget {
     var pageHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue[700],
+        backgroundColor: Theme.of(context).primaryColor,
         centerTitle: true,
         title: Text(
           'Thông báo',
@@ -27,15 +27,15 @@ class NotificationPage extends StatelessWidget {
             Container(
               child: Icon(
                 Icons.notifications_active_outlined,
-                color: Colors.grey,
-                size: 250,
+                color: Colors.black26,
+                size: 200,
               ),
             ),
             Container(
               child: Column(
                 children: [
-                  Text('Bạn chưa có thông báo mới nào.'),
-                  Text('Hãy quay trở lại sau!'),
+                  Text('Bạn chưa có thông báo mới nào.',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black26),),
+                  Text('Hãy quay trở lại sau!',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: Colors.black26),),
                 ],
               ),
             ),

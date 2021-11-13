@@ -14,8 +14,11 @@ class _MyAccountSettingState extends State<MyAccountSetting> {
     var _pageWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.blue[700],
+        centerTitle: true,
         title: Container(
           child: Text('Cài đặt'),
+
         ),
       ),
       body: Material(
@@ -33,13 +36,20 @@ class _MyAccountSettingState extends State<MyAccountSetting> {
                   child: Row(
                     children: [
                       Container(
-                        child: Image.asset(
-                          'assets/accounts/PharmacityLogo.png',
-                          width: _pageWidth * 0.25,
-                          height: _pageHeight * 0.18,
-                        ),
-                        width: _pageWidth * 0.3,
+                        // child: Image.asset(
+                        //   'assets/accounts/PharmacityLogo.png',
+                        //   width: _pageWidth * 0.25,
+                        //   height: _pageHeight * 0.18,
+                        // ),
+                        width: _pageWidth * 0.45,
+                        height:_pageHeight *0.15,
                         alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage('assets/accounts/PharmacityLogo.png'),
+                            fit: BoxFit.fill,
+                          ),
+                        ),
                       ),
                       Expanded(
                         child: Container(
@@ -49,9 +59,10 @@ class _MyAccountSettingState extends State<MyAccountSetting> {
                               Container(
                                 width: _pageWidth * 0.7,
                                 child: Text(
-                                  'Pharmacity app',
+                                  'Pharmacity app.',
                                   style: TextStyle(
-                                    fontSize: _pageHeight * 0.2 * 0.2,
+                                    fontSize: 20,
+                                    color: Colors.white,
                                   ),
                                 ),
                               ),
@@ -60,7 +71,8 @@ class _MyAccountSettingState extends State<MyAccountSetting> {
                                 child: Text(
                                   'Version 2.1.2',
                                   style: TextStyle(
-                                    fontSize: _pageHeight * 0.2 * 0.15,
+                                    fontSize: 17,
+                                    color: Colors.white,
                                   ),
                                 ),
                               ),
@@ -100,7 +112,7 @@ class _MyAccountSettingState extends State<MyAccountSetting> {
                                   // crossAxisAlignment: CrossAxisAlignment.end,
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
-                                    Icon(Icons.language),
+                                    Icon(Icons.stars_rounded),
                                     Text('Tiếng Việt'),
                                   ],
                                 ),

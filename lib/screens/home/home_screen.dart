@@ -6,6 +6,8 @@ import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:pharmacity_dart/screens/services/brands/brand.dart';
+import 'package:pharmacity_dart/screens/services/brands/show_brand.dart';
 import 'package:pharmacity_dart/screens/services/hot_products_on_pharmacity/hot_product_detail.dart';
 import 'package:pharmacity_dart/screens/services/hot_products_on_pharmacity/hot_product_on_pharmacity.dart';
 import 'package:pharmacity_dart/screens/services/products_only_on_pharmacity/product_detail.dart';
@@ -76,6 +78,15 @@ class HomeScreen extends State<MyHomeScreen> {
         price: '220.000',
         discount: '-50%',
         discountPrice: '110.000'),
+  ];
+  List<Brand> _brandList = [
+    Brand(image:'assets/pharmacity.png',name: 'Pharmacity'),
+    Brand(image:'assets/abbott.png',name: 'Abbott'),
+    Brand(image:'assets/microlife.png',name: 'Microlife'),
+    Brand(image:'assets/blackmores.png',name: 'Blackmores'),
+    Brand(image:'assets/pediasure.png',name: 'PediaSure'),
+    Brand(image:'assets/loreal.jpg',name: 'L\'oreal'),
+
   ];
 
   @override
@@ -203,6 +214,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                 'assets/favoriteServices/coupon.png',
                                 width: size.width * 0.3 * 0.33,
                                 height: size.width * 0.3 * 0.33,
+
                               ),
                               style: ElevatedButton.styleFrom(
                                 shape: CircleBorder(),
@@ -271,6 +283,7 @@ class HomeScreen extends State<MyHomeScreen> {
                           ),
                         ],
                       ),
+
                     ),
 
                     //Row2
@@ -281,6 +294,7 @@ class HomeScreen extends State<MyHomeScreen> {
                           //Thẻ thành viên
                           Container(
                             child: ElevatedButton(
+
                               onPressed: () {},
                               child: Image.asset(
                                 'assets/favoriteServices/member-card.png',
@@ -320,6 +334,7 @@ class HomeScreen extends State<MyHomeScreen> {
                           //Tổng đài đặt hàng
                           Container(
                             child: ElevatedButton(
+
                               onPressed: () {},
                               child: Image.asset(
                                 'assets/favoriteServices/hotline.png',
@@ -365,6 +380,7 @@ class HomeScreen extends State<MyHomeScreen> {
                           //Tư vấn trực tuyến
                           Container(
                             child: ElevatedButton(
+
                               onPressed: () {},
                               child: Image.asset(
                                 'assets/favoriteServices/chat-online.png',
@@ -831,172 +847,21 @@ class HomeScreen extends State<MyHomeScreen> {
                     ),
                   ],
                 ),
-              ),
-              SizedBox(height: _edgeInsertTB),
-              Container(
-                height: size.height * 0.16,
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      SizedBox(width: 10.0),
-                      TextButton(
-                        onPressed: () {},
-                        child: Column(
-                          children: <Widget>[
-                            Container(
-                              height: size.height * 0.1,
-                              width: size.width * 0.2,
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(10.0),
-                                image: DecorationImage(
-                                  image: AssetImage('assets/pharmacity.png'),
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                            ),
-                            Text(
-                              'Pharmacity',
-                              style: TextStyle(
-                                color: Colors.black,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(width: 10.0),
-                      TextButton(
-                        onPressed: () {},
-                        child: Column(
-                          children: <Widget>[
-                            Container(
-                              height: size.height * 0.1,
-                              width: size.width * 0.2,
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(10.0),
-                                image: DecorationImage(
-                                  image: AssetImage('assets/abbott.png'),
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                            ),
-                            Text(
-                              'Abbott',
-                              style: TextStyle(
-                                color: Colors.black,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(width: 10.0),
-                      TextButton(
-                        onPressed: () {},
-                        child: Column(
-                          children: <Widget>[
-                            Container(
-                              height: size.height * 0.1,
-                              width: size.width * 0.2,
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(10.0),
-                                image: DecorationImage(
-                                  image: AssetImage('assets/microlife.png'),
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                            ),
-                            Text(
-                              'Microlife',
-                              style: TextStyle(
-                                color: Colors.black,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(width: 10.0),
-                      TextButton(
-                        onPressed: () {},
-                        child: Column(
-                          children: <Widget>[
-                            Container(
-                              height: size.height * 0.1,
-                              width: size.width * 0.2,
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(10.0),
-                                image: DecorationImage(
-                                  image: AssetImage('assets/blackmores.png'),
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                            ),
-                            Text(
-                              'Blackmores',
-                              style: TextStyle(
-                                color: Colors.black,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(width: 10.0),
-                      TextButton(
-                        onPressed: () {},
-                        child: Column(
-                          children: <Widget>[
-                            Container(
-                              height: size.height * 0.1,
-                              width: size.width * 0.2,
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(10.0),
-                                image: DecorationImage(
-                                  image: AssetImage('assets/pediasure.png'),
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                            ),
-                            Text(
-                              'PediaSure',
-                              style: TextStyle(
-                                color: Colors.black,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(width: 10.0),
-                      TextButton(
-                        onPressed: () {},
-                        child: Column(
-                          children: <Widget>[
-                            Container(
-                              height: size.height * 0.1,
-                              width: size.width * 0.2,
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(10.0),
-                                image: DecorationImage(
-                                  image: AssetImage('assets/loreal.jpg'),
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                            ),
-                            Text(
-                              'L\'oreal',
-                              style: TextStyle(
-                                color: Colors.black,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
+
+                SizedBox(height: _edgeInsertTB),
+                Container(
+                  margin: EdgeInsets.fromLTRB(10.0, 0, 10.0, 0),
+                  height: size.height * 0.2,
+                  child: ListView.separated(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: _brandList.length,
+                    separatorBuilder: (BuildContext context, int index) {
+                      return SizedBox(width: 10.0);
+                    },
+                    itemBuilder: (BuildContext context, int index) {
+                      return SpecificBrand(brand: _brandList[index],);
+                    },
+
                   ),
                 ),
               ),
@@ -1004,11 +869,7 @@ class HomeScreen extends State<MyHomeScreen> {
           ),
         ),
       ),
-      floatingActionButton: IconButton(
-        icon: Icon(Icons.shopping_cart_outlined),
-        onPressed: () {},
-        color: Colors.blue,
-      ),
+
     );
   }
 }

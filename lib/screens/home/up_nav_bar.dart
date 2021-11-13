@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../services/notification.dart';
-
+import 'package:fluttericon/font_awesome_icons.dart';
 AppBar UpAppBar(context) {
   var _pageWidth = MediaQuery.of(context).size.width;
   var _pageHeight = MediaQuery.of(context).size.height;
@@ -10,6 +10,7 @@ AppBar UpAppBar(context) {
 
   return AppBar(
     backgroundColor: Theme.of(context).primaryColor,
+
     toolbarHeight: _pageHeight * 0.1,
     title: Row(
       children: [
@@ -65,9 +66,11 @@ AppBar UpAppBar(context) {
               ),
 
             ],
+
           ),
         ),
       ],
     ),
+
   );
 }
