@@ -2,52 +2,75 @@ import 'package:flutter/material.dart';
 import '../services/notification.dart';
 import 'package:fluttericon/font_awesome_icons.dart';
 AppBar UpAppBar(context) {
+  var _pageWidth = MediaQuery.of(context).size.width;
+  var _pageHeight = MediaQuery.of(context).size.height;
+
+  var _edgeInsertLR = MediaQuery.of(context).size.width * 0.03;
+  var _edgeInsertTB = MediaQuery.of(context).size.height * 0.03;
+
   return AppBar(
     backgroundColor: Theme.of(context).primaryColor,
-    title: Container(
-      height: 40,
-      margin: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
-      padding: EdgeInsets.fromLTRB(0, 5.0, 0, 5.0),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          IconButton(
-            alignment: Alignment.center,
-            iconSize: 30.0,
-            color: Colors.grey[400],
-            icon: Icon(Icons.search),
-            onPressed: () {},
+
+    toolbarHeight: _pageHeight * 0.1,
+    title: Row(
+      children: [
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10),
           ),
-          Expanded(
-            child: Text(
-              'Tìm trên Pharmacity',
-              style: TextStyle(
-                color: Colors.black26,
-                fontSize: 16.0,
+          width: _pageWidth * 0.72,
+          height: _pageHeight * 0.05,
+          child: Row(
+            children: [
+              Container(
+                child: Icon(
+                  Icons.search,
+                  color: Colors.black87,
+                ),
+                margin: EdgeInsets.only(left: 10),
               ),
-              textAlign: TextAlign.center,
-            ),
+              Expanded(
+                child: Container(
+                  child: TextField(
+                    decoration: InputDecoration.collapsed(
+                      hintText: 'Tìm trên Pharmacity',
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+        Container(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Container(
+                width: _pageWidth*0.08,
+                child: IconButton(
+                  icon: Icon(Icons.notifications_none_outlined),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/notification');
+                  },
+                ),
+              ),
+              Container(
+                width: _pageWidth*0.08,
+                child: IconButton(
+                  icon: Icon(Icons.shopping_cart_outlined),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/shoppingCart');
+                  },
+                ),
+              ),
+
+            ],
+
+          ),
+        ),
+      ],
     ),
-    actions: <Widget>[
-      IconButton(
-        icon: Icon(Icons.notifications_none_outlined,size: 30.0,),
-        onPressed: () {
-          Navigator.pushNamed(context, '/notification');
-        },
-      ),
-      IconButton(
-        icon: Icon(FontAwesome.basket,size:30.0),
-        onPressed: () {
-          Navigator.pushNamed(context, '/shoppingCart');
-        },
-      ),
-    ],
+
   );
 }

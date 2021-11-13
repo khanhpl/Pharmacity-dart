@@ -17,8 +17,8 @@ class _phouseSystemScreen extends State<MyPHouseSystemPage> {
 
     var _edgeInsertLR = MediaQuery.of(context).size.width * 0.03;
     var _edgeInsertTB = MediaQuery.of(context).size.height * 0.03;
-    final _key1 =
-        GlobalKey(); // key use for container contain up icon and contact
+
+    var _themeColor = Theme.of(context).primaryColor;
     return Scaffold(
       appBar: UpAppBarPHouseSystem(context),
       body: Container(
@@ -28,14 +28,13 @@ class _phouseSystemScreen extends State<MyPHouseSystemPage> {
             children: [
               Container(
                 height: pageHeight * 0.2,
-                key: _key1,
                 child: Row(
                   children: <Widget>[
                     Container(
                       width: pageWidth,
                       height: pageHeight * 0.2,
                       decoration: BoxDecoration(
-                        color: Colors.blue[700],
+                        color: _themeColor,
                       ),
                       child: Row(
                         children: [
@@ -69,6 +68,7 @@ class _phouseSystemScreen extends State<MyPHouseSystemPage> {
                                 Container(
                                   height: pageHeight * 0.2 * 0.2,
                                   alignment: Alignment.centerLeft,
+                                  margin: EdgeInsets.only(left: 10),
                                   width: pageWidth * 0.5,
                                   child: Text(
                                     'Nhà thuốc tiện lợi',
@@ -83,7 +83,10 @@ class _phouseSystemScreen extends State<MyPHouseSystemPage> {
                                   child: Row(
                                     children: [
                                       Container(
-                                        child: Icon(Icons.location_on_outlined),
+                                        child: Icon(
+                                          Icons.location_on_outlined,
+                                          color: Colors.white,
+                                        ),
                                       ),
                                       Container(
                                         margin: EdgeInsets.fromLTRB(
@@ -106,7 +109,7 @@ class _phouseSystemScreen extends State<MyPHouseSystemPage> {
                                               height:
                                                   pageHeight * 0.2 * 0.3 * 0.5,
                                               width: pageWidth * 0.5 * 0.8,
-                                              alignment: Alignment.centerLeft,
+                                              alignment: Alignment.topLeft,
                                               child: Text(
                                                 'Pharmacity',
                                                 style: TextStyle(
@@ -126,7 +129,10 @@ class _phouseSystemScreen extends State<MyPHouseSystemPage> {
                                   child: Row(
                                     children: [
                                       Container(
-                                        child: Icon(Icons.access_time_outlined),
+                                        child: Icon(
+                                          Icons.access_time_outlined,
+                                          color: Colors.white,
+                                        ),
                                       ),
                                       Container(
                                         margin: EdgeInsets.fromLTRB(
@@ -149,7 +155,7 @@ class _phouseSystemScreen extends State<MyPHouseSystemPage> {
                                               height:
                                                   pageHeight * 0.2 * 0.3 * 0.5,
                                               width: pageWidth * 0.5 * 0.8,
-                                              alignment: Alignment.centerLeft,
+                                              alignment: Alignment.topLeft,
                                               child: Text(
                                                 'Giúp sức mùa Covid',
                                                 style: TextStyle(
@@ -179,7 +185,8 @@ class _phouseSystemScreen extends State<MyPHouseSystemPage> {
                 height: pageHeight * 0.15,
                 width: pageWidth,
                 child: Container(
-                  margin: EdgeInsets.fromLTRB(_edgeInsertLR, 0, _edgeInsertLR, 0),
+                  margin:
+                      EdgeInsets.fromLTRB(_edgeInsertLR, 0, _edgeInsertLR, 0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10.0),
                     border: Border.all(color: Colors.grey.shade900),
@@ -232,7 +239,7 @@ class _phouseSystemScreen extends State<MyPHouseSystemPage> {
               Container(
                 height: 30,
                 decoration: BoxDecoration(
-                  color: Colors.blue.shade700,
+                  color: _themeColor,
                 ),
                 child: Container(
                   margin: EdgeInsets.only(left: 10.0),
