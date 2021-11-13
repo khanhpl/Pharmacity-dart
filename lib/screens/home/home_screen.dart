@@ -247,6 +247,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                 'assets/favoriteServices/doctor-online.png',
                                 width: size.width * 0.3 * 0.33,
                                 height: size.width * 0.3 * 0.33,
+                                color: Colors.white,
                               ),
                               style: ElevatedButton.styleFrom(
                                 shape: CircleBorder(),

@@ -16,7 +16,7 @@ class PharmacityHotProduct extends StatelessWidget {
     var _pageHeight = MediaQuery.of(context).size.height;
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey.shade200),
+        border: Border.all(color: Colors.grey.shade400),
         borderRadius: BorderRadius.circular(15),
       ),
       width: _pageWidth * 0.45,

@@ -16,8 +16,12 @@ class _MyUserRankingState extends State<MyUserRanking> {
 
     var _edgeInsertLR = MediaQuery.of(context).size.width * 0.03;
     var _edgeInsertTB = MediaQuery.of(context).size.height * 0.03;
+
+    var _themeColor = Theme.of(context).primaryColor;
     return Scaffold(
+
       appBar: AppBar(
+        backgroundColor: _themeColor,
         title: Container(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -41,7 +45,6 @@ class _MyUserRankingState extends State<MyUserRanking> {
               SizedBox(height: _edgeInsertTB),
               Container(
                 width: _pageWidth,
-                // height: _pageHeight * 0.28,
                 alignment: Alignment.center,
                 margin: EdgeInsets.fromLTRB(_edgeInsertLR, 0, _edgeInsertLR, 0),
                 decoration: BoxDecoration(
@@ -50,7 +53,7 @@ class _MyUserRankingState extends State<MyUserRanking> {
                 ),
                 child: Column(
                   children: [
-                    SizedBox(height: 10),
+                    SizedBox(height: _edgeInsertTB*0.5),
                     Container(
                       child: RichText(
                         text: TextSpan(
@@ -69,9 +72,12 @@ class _MyUserRankingState extends State<MyUserRanking> {
                         ),
                       ),
                     ),
-                    Icon(
-                      Icons.wallet_membership,
-                      size: 40,
+                    SizedBox(height: _edgeInsertTB*0.5),
+                    Container(
+                      child: Image.asset('assets/accounts/src_assets_newprofile_icprofilesilver.png',
+                        width: _pageWidth*0.03,
+                        height: _pageHeight*0.03,
+                      ),
                     ),
                     Container(
                       margin: EdgeInsets.only(top: _pageHeight * 0.25 * 0.05),
@@ -89,23 +95,29 @@ class _MyUserRankingState extends State<MyUserRanking> {
                         width: _pageWidth * 0.7,
                         height: 5,
                         decoration: BoxDecoration(
-                          color: Colors.grey,
+                          color: Colors.grey.shade300,
                           borderRadius: BorderRadius.circular(5),
                         ),
                       ),
                     ),
                     Container(
                       width: _pageWidth * 0.85,
-                      margin: EdgeInsets.only(top: _pageHeight * 0.28 * 0.1),
                       child: Row(
                         children: [
                           Container(
                             child: Column(
                               children: [
-                                Icon(
-                                  Icons.wallet_membership,
+                                Container(
+                                  child: Image.asset('assets/accounts/src_assets_newprofile_icprofilesilver.png',
+                                    width: _pageWidth*0.03,
+                                    height: _pageHeight*0.03,
+                                  ),
                                 ),
-                                Text('Thành viên'),
+                                Text('Thành viên',
+                                  style: TextStyle(
+                                    color: Colors.green,
+                                  ),
+                                ),
                               ],
                             ),
                           ),
@@ -115,8 +127,11 @@ class _MyUserRankingState extends State<MyUserRanking> {
                               alignment: Alignment.centerRight,
                               child: Column(
                                 children: [
-                                  Icon(
-                                    Icons.wallet_membership,
+                                  Container(
+                                    child: Image.asset('assets/accounts/src_assets_icons_icmedalmember.png',
+                                      width: _pageWidth*0.05,
+                                      height: _pageHeight*0.05,
+                                    ),
                                   ),
                                   Text('V.I.P'),
                                 ],
@@ -184,6 +199,9 @@ class _MyUserRankingState extends State<MyUserRanking> {
                     Container(
                       child: Text(
                         'Phân loại hạng thành viên',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                     Container(
@@ -200,17 +218,19 @@ class _MyUserRankingState extends State<MyUserRanking> {
                       height: _pageHeight * 0.07,
                       margin: EdgeInsets.fromLTRB(_edgeInsertLR, 0, _edgeInsertLR, 0),
                       decoration: BoxDecoration(
-                        color: Colors.blue.shade100,
+                        color: Color.fromRGBO(185, 223, 255, 1),
                         borderRadius: BorderRadius.circular(5),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(
-                            margin: EdgeInsets.fromLTRB(_edgeInsertLR, 0, 0, 0),
-                            child: Icon(
-                              Icons.wallet_membership,
+                            child: Image.asset('assets/accounts/src_assets_newprofile_icprofilesilver.png',
+                              width: _pageWidth*0.03,
+                              height: _pageHeight*0.03,
                             ),
+                            margin: EdgeInsets.only(left: _edgeInsertLR),
+                            width: _pageWidth*0.08,
                           ),
                           Container(
                             margin: EdgeInsets.only(left: 10),
@@ -234,17 +254,19 @@ class _MyUserRankingState extends State<MyUserRanking> {
                       // alignment: Alignment.centerLeft,
                       margin: EdgeInsets.fromLTRB(_edgeInsertLR, 0, _edgeInsertLR, 0),
                       decoration: BoxDecoration(
-                        color: Colors.blue.shade100,
+                        color: Color.fromRGBO(185, 223, 255, 1),
                         borderRadius: BorderRadius.circular(5),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(
-                            margin: EdgeInsets.fromLTRB(_edgeInsertLR, 0, 0, 0),
-                            child: Icon(
-                              Icons.wallet_membership,
+                            child: Image.asset('assets/accounts/src_assets_icons_icmedalmember.png',
+                              width: _pageWidth*0.05,
+                              height: _pageHeight*0.05,
                             ),
+                            margin: EdgeInsets.only(left: _edgeInsertLR),
+                            width: _pageWidth*0.08,
                           ),
                           Container(
                             alignment: Alignment.centerLeft,
