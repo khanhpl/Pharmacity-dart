@@ -39,6 +39,8 @@ dependencies:
   google_maps_flutter: ^2.0.11
   flutter_dash: ^0.0.1
   url_launcher: ^6.0.12
+  convex_bottom_bar: ^3.0.0
+  fluttericon: ^2.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

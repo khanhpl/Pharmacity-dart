@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import '../services/notification.dart';
+import 'package:fluttericon/font_awesome_icons.dart';
 AppBar UpAppBar(context) {
   return AppBar(
-    backgroundColor: Colors.blue[700],
+    backgroundColor: Theme.of(context).primaryColor,
     title: Container(
       height: 40,
       margin: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
@@ -12,20 +13,23 @@ AppBar UpAppBar(context) {
         borderRadius: BorderRadius.circular(10.0),
       ),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           IconButton(
+            alignment: Alignment.center,
+            iconSize: 30.0,
             color: Colors.grey[400],
             icon: Icon(Icons.search),
             onPressed: () {},
           ),
           Expanded(
-            child: TextField(
-              decoration: InputDecoration(
-                  hintText: 'Tìm Trên Pharmacity',
-                  hintStyle: TextStyle(
-                    color: Colors.black26,
-                  ),
+            child: Text(
+              'Tìm trên Pharmacity',
+              style: TextStyle(
+                color: Colors.black26,
+                fontSize: 16.0,
               ),
+              textAlign: TextAlign.center,
             ),
           ),
         ],
@@ -33,13 +37,13 @@ AppBar UpAppBar(context) {
     ),
     actions: <Widget>[
       IconButton(
-        icon: Icon(Icons.notifications_active_outlined),
+        icon: Icon(Icons.notifications_none_outlined,size: 30.0,),
         onPressed: () {
           Navigator.pushNamed(context, '/notification');
         },
       ),
       IconButton(
-        icon: Icon(Icons.shopping_cart_outlined),
+        icon: Icon(FontAwesome.basket,size:30.0),
         onPressed: () {
           Navigator.pushNamed(context, '/shoppingCart');
         },

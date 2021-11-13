@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttericon/typicons_icons.dart';
 
 class Order extends StatefulWidget {
    Function toggleView;
@@ -17,7 +18,7 @@ class _OrderState extends State<Order> {
       length: 6,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.blue[700],
+          backgroundColor: Theme.of(context).primaryColor,
           centerTitle: true,
           title: Text(
             'Lịch sử đơn hàng',
@@ -75,7 +76,7 @@ class _OrderState extends State<Order> {
         body: Center(
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.blue[700],
+              color: Theme.of(context).primaryColor,
             ),
             child: Container(
               decoration: BoxDecoration(
@@ -93,43 +94,64 @@ class _OrderState extends State<Order> {
                     ),
                     child: TabBar(
                       isScrollable: true,
-                      labelColor: Colors.blue,
+                      labelColor: Theme.of(context).primaryColor,
                       unselectedLabelColor: Colors.grey,
+
                       tabs: <Widget>[
                         Tab(
                           child: Container(
                             // width: size.width * 0.3,
-                            child: Text('Tất cả'),
+                            child: Text(
+                                'Tất cả',
+                              style: TextStyle(
+                                fontSize: 16.0,
+                              ),
+                            ),
                           ),
                         ),
                         Tab(
                           child: Container(
                             // width: size.width * 0.3,
-                            child: Text('Chờ xác nhận'),
+                            child: Text('Chờ xác nhận',
+                              style: TextStyle(
+                                fontSize: 16.0,
+                              ),),
                           ),
                         ),
                         Tab(
                           child: Container(
                             // width: size.width * 0.3,
-                            child: Text('Đang xử lý'),
+                            child: Text('Đang xử lý',
+                              style: TextStyle(
+                                fontSize: 16.0,
+                              ),),
                           ),
                         ),
                         Tab(
                           child: Container(
                             // width: size.width * 0.3,
-                            child: Text('Đang giao'),
+                            child: Text('Đang giao',
+                              style: TextStyle(
+                                fontSize: 16.0,
+                              ),),
                           ),
                         ),
                         Tab(
                           child: Container(
                             // width: size.width * 0.3,
-                            child: Text('Đã giao thành công'),
+                            child: Text('Đã giao thành công',
+                              style: TextStyle(
+                                fontSize: 16.0,
+                              ),),
                           ),
                         ),
                         Tab(
                           child: Container(
                             // width: size.width * 0.3,
-                            child: Text('Hủy'),
+                            child: Text('Hủy',
+                              style: TextStyle(
+                                fontSize: 16.0,
+                              ),),
                           ),
                         ),
                       ],
@@ -177,7 +199,7 @@ class _ReceiptState extends State<Receipt> {
           children: <Widget>[
             SizedBox(height: size.height * 0.1),
             Icon(
-              Icons.list_alt_outlined,
+              Typicons.clipboard,
               color: Colors.grey[200],
               size: 150.0,
             ),
