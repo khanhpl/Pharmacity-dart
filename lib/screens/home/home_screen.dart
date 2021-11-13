@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:pharmacity_dart/screens/services/brands/brand.dart';
+import 'package:pharmacity_dart/screens/services/brands/show_brand.dart';
 import 'package:pharmacity_dart/screens/services/hot_products_on_pharmacity/hot_product_detail.dart';
 import 'package:pharmacity_dart/screens/services/hot_products_on_pharmacity/hot_product_on_pharmacity.dart';
 import 'package:pharmacity_dart/screens/services/products_only_on_pharmacity/product_detail.dart';
@@ -30,6 +32,15 @@ class HomeScreen extends State<MyHomeScreen> {
     HotProductDetail(image: 'assets/discount3.webp', brand: 'assets/pharmacitybrand.png',name: 'Bơm tiêm sử dụng 1 lần Vinahankook(10ml/1cc)', price: '2.100', discount:'-30%', discountPrice:'1.470' ),
     HotProductDetail(image: 'assets/discount4.webp', brand: 'assets/pharmacitybrand.png',name: 'Chai xịt làm lạnh Starblam(150ml)', price: '220.000', discount:'-50%', discountPrice:'110.000' ),
   ];
+  List<Brand> _brandList = [
+    Brand(image:'assets/pharmacity.png',name: 'Pharmacity'),
+    Brand(image:'assets/abbott.png',name: 'Abbott'),
+    Brand(image:'assets/microlife.png',name: 'Microlife'),
+    Brand(image:'assets/blackmores.png',name: 'Blackmores'),
+    Brand(image:'assets/pediasure.png',name: 'PediaSure'),
+    Brand(image:'assets/loreal.jpg',name: 'L\'oreal'),
+
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +51,7 @@ class HomeScreen extends State<MyHomeScreen> {
       appBar: UpAppBar(context),
       body: Container(
         decoration: BoxDecoration(
-          color: Colors.blue[700],
+          color: Theme.of(context).primaryColor,
         ),
         child: Container(
           decoration: BoxDecoration(
@@ -51,6 +62,7 @@ class HomeScreen extends State<MyHomeScreen> {
             ),
           ),
           child: SingleChildScrollView(
+
             controller: widget.scrollController,
             scrollDirection: Axis.vertical,
             child: Column(
@@ -59,7 +71,7 @@ class HomeScreen extends State<MyHomeScreen> {
                 Container(
                   height: size.height * 0.10,
                   decoration: BoxDecoration(
-                    color: Colors.blue[700],
+                    color: Theme.of(context).primaryColor,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20),
                       bottomLeft: Radius.circular(20),
@@ -150,10 +162,14 @@ class HomeScreen extends State<MyHomeScreen> {
                         children: <Widget>[
                           CircleAvatar(
                             radius: 30.0,
+                            backgroundColor: Theme.of(context).primaryColor,
                             child: IconButton(
+                              color:Colors.white,
                               iconSize: 40,
                               icon: Icon(
                                 Icons.smartphone,
+
+
                               ),
                               onPressed: () {},
                             ),
@@ -169,8 +185,10 @@ class HomeScreen extends State<MyHomeScreen> {
                       Column(
                         children: <Widget>[
                           CircleAvatar(
+                            backgroundColor: Theme.of(context).primaryColor,
                             radius: 30.0,
                             child: IconButton(
+                              color:Colors.white,
                               iconSize: 40,
                               icon: Icon(Icons.call),
                               onPressed: () {},
@@ -187,8 +205,10 @@ class HomeScreen extends State<MyHomeScreen> {
                       Column(
                         children: <Widget>[
                           CircleAvatar(
+                            backgroundColor: Theme.of(context).primaryColor,
                             radius: 30.0,
                             child: IconButton(
+                              color:Colors.white,
                               iconSize: 40,
                               icon: Icon(Icons.chat_bubble_outline_outlined),
                               onPressed: () {},
@@ -205,8 +225,10 @@ class HomeScreen extends State<MyHomeScreen> {
                       Column(
                         children: <Widget>[
                           CircleAvatar(
+                            backgroundColor: Theme.of(context).primaryColor,
                             radius: 30.0,
                             child: IconButton(
+                              color:Colors.white,
                               iconSize: 40,
                               icon: Icon(Icons.library_add_outlined),
                               onPressed: () {},
@@ -585,170 +607,17 @@ class HomeScreen extends State<MyHomeScreen> {
                 ),
                 SizedBox(height: _edgeInsertTB),
                 Container(
-                  height: size.height * 0.16,
-                  child: SingleChildScrollView(
+                  margin: EdgeInsets.fromLTRB(10.0, 0, 10.0, 0),
+                  height: size.height * 0.2,
+                  child: ListView.separated(
                     scrollDirection: Axis.horizontal,
-                    child: Row(
-                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        SizedBox(width: 10.0),
-                        TextButton(
-                          onPressed: () {},
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                                height: size.height * 0.1,
-                                width: size.width * 0.2,
-                                decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.grey),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/pharmacity.png'),
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                              ),
-                              Text(
-                                'Pharmacity',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(width: 10.0),
-                        TextButton(
-                          onPressed: () {},
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                                height: size.height * 0.1,
-                                width: size.width * 0.2,
-                                decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.grey),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/abbott.png'),
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                              ),
-                              Text(
-                                'Abbott',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(width: 10.0),
-                        TextButton(
-                          onPressed: () {},
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                                height: size.height * 0.1,
-                                width: size.width * 0.2,
-                                decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.grey),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/microlife.png'),
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                              ),
-                              Text(
-                                'Microlife',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(width: 10.0),
-                        TextButton(
-                          onPressed: () {},
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                                height: size.height * 0.1,
-                                width: size.width * 0.2,
-                                decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.grey),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/blackmores.png'),
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                              ),
-                              Text(
-                                'Blackmores',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(width: 10.0),
-                        TextButton(
-                          onPressed: () {},
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                                height: size.height * 0.1,
-                                width: size.width * 0.2,
-                                decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.grey),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/pediasure.png'),
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                              ),
-                              Text(
-                                'PediaSure',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(width: 10.0),
-                        TextButton(
-                          onPressed: () {},
-                          child: Column(
-                            children: <Widget>[
-                              Container(
-                                height: size.height * 0.1,
-                                width: size.width * 0.2,
-                                decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.grey),
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/loreal.jpg'),
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
-                              ),
-                              Text(
-                                'L\'oreal',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
+                    itemCount: _brandList.length,
+                    separatorBuilder: (BuildContext context, int index) {
+                      return SizedBox(width: 10.0);
+                    },
+                    itemBuilder: (BuildContext context, int index) {
+                      return SpecificBrand(brand: _brandList[index],);
+                    },
                   ),
                 ),
               ],
@@ -756,11 +625,7 @@ class HomeScreen extends State<MyHomeScreen> {
           ),
         ),
       ),
-      floatingActionButton: IconButton(
-        icon: Icon(Icons.shopping_cart_outlined),
-        onPressed: () {},
-        color: Colors.blue,
-      ),
+
     );
   }
 }
