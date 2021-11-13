@@ -14,17 +14,17 @@ class SpecificBrand extends StatelessWidget{
     return Column(
       children: <Widget>[
     Container(
-    height: size.height * 0.15,
-      width: size.width * 0.25,
+    height: size.height * 0.10,
+      width: size.width * 0.20,
       decoration: BoxDecoration(
         border: Border.all(color:Color(0xFFD6D6D6)),
         borderRadius: BorderRadius.circular(10.0),
       ),
       child: Center(
         child: Container(
-          margin: EdgeInsets.all(15.0),
-              height: 40,
-              width: 60,
+          margin: EdgeInsets.all(10.0),
+              height: size.height * 0.1 * 0.5,
+              width: size.width *0.2 * 0.5 ,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(brand.image),
@@ -35,7 +35,7 @@ class SpecificBrand extends StatelessWidget{
             ),
       ),
     ),
-        SizedBox(height:5.0),
+        SizedBox(height:10.0),
         Text(
           brand.name,
           style: TextStyle(
