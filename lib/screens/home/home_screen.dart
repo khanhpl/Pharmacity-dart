@@ -80,12 +80,12 @@ class HomeScreen extends State<MyHomeScreen> {
         discountPrice: '110.000'),
   ];
   List<Brand> _brandList = [
-    Brand(image: 'assets/pharmacity.png', name: 'Pharmacity'),
     Brand(image: 'assets/abbott.png', name: 'Abbott'),
     Brand(image: 'assets/microlife.png', name: 'Microlife'),
     Brand(image: 'assets/blackmores.png', name: 'Blackmores'),
     Brand(image: 'assets/pediasure.png', name: 'PediaSure'),
     Brand(image: 'assets/loreal.jpg', name: 'L\'oreal'),
+    Brand(image: 'assets/pharmacity.png', name: 'Pharmacity'),
   ];
 
   @override
@@ -377,6 +377,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                 'assets/favoriteServices/chat-online.png',
                                 width: size.width * 0.3 * 0.33,
                                 height: size.width * 0.3 * 0.33,
+                                color: Colors.white,
                               ),
                               style: ElevatedButton.styleFrom(
                                 shape: CircleBorder(),
@@ -823,6 +824,7 @@ class HomeScreen extends State<MyHomeScreen> {
                     ),
                     Spacer(),
                     Container(
+                      margin: EdgeInsets.only(right: _edgeInsertLR),
                       child: GestureDetector(
                         onTap: () {},
                         child: Text(
@@ -877,6 +879,6 @@ Widget CaroselImage = Center(
     indicatorBgPadding: 0,
     autoplayDuration: Duration(seconds: 5),
     borderRadius: true,
-    dotBgColor: Colors.black.withOpacity(0.1),
+    dotBgColor: Colors.black.withOpacity(0),
   ),
 );
