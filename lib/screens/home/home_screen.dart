@@ -107,7 +107,7 @@ class HomeScreen extends State<MyHomeScreen> {
             children: <Widget>[
               SizedBox(height: _edgeInsertTB),
               Container(
-                height: size.height * 0.08,
+                height: size.height * 0.065,
                 decoration: BoxDecoration(
                   color: _themeColor,
                   borderRadius: BorderRadius.only(
@@ -130,12 +130,22 @@ class HomeScreen extends State<MyHomeScreen> {
                           'assets/phouse.png',
                         ),
                       ),
-                      Text(
-                        '635 nhà thuốc trên toàn quốc',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w400,
+                      RichText(
+                        text: TextSpan(
+                          text: '635 ',
+                          style: TextStyle(
+                            fontSize: size.height * 0.06 *0.4,
+                            fontWeight: FontWeight.w400,
+                          ),
+                          children: [
+                            TextSpan(
+                              text: 'nhà thuốc trên toàn quốc',
+                              style: TextStyle(
+                                fontSize: size.height * 0.06 *0.35,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       Spacer(flex: 4),
@@ -170,7 +180,7 @@ class HomeScreen extends State<MyHomeScreen> {
                   'Dịch vụ yêu thích',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
-                    fontSize: 20.0,
+                    fontSize: 18.0,
                   ),
                 ),
               ),
@@ -191,8 +201,8 @@ class HomeScreen extends State<MyHomeScreen> {
                               onPressed: () {},
                               child: Image.asset(
                                 'assets/favoriteServices/coupon.png',
-                                width: size.width * 0.33 * 0.33,
-                                height: size.width * 0.33 * 0.33,
+                                width: size.width * 0.3 * 0.33,
+                                height: size.width * 0.3 * 0.33,
                               ),
                               style: ElevatedButton.styleFrom(
                                 shape: CircleBorder(),
@@ -209,7 +219,7 @@ class HomeScreen extends State<MyHomeScreen> {
                               text: TextSpan(
                                 text: 'Coupon\n',
                                 style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: 12,
                                   fontWeight: FontWeight.w400,
                                   color: Colors.black,
                                 ),
@@ -229,8 +239,8 @@ class HomeScreen extends State<MyHomeScreen> {
                               onPressed: () {},
                               child: Image.asset(
                                 'assets/favoriteServices/doctor-online.png',
-                                width: size.width * 0.33 * 0.33,
-                                height: size.width * 0.33 * 0.33,
+                                width: size.width * 0.3 * 0.33,
+                                height: size.width * 0.3 * 0.33,
                               ),
                               style: ElevatedButton.styleFrom(
                                 shape: CircleBorder(),
@@ -247,7 +257,7 @@ class HomeScreen extends State<MyHomeScreen> {
                               text: TextSpan(
                                 text: 'Dược sĩ\n',
                                 style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: 12,
                                   fontWeight: FontWeight.w400,
                                   color: Colors.black,
                                 ),
@@ -274,8 +284,8 @@ class HomeScreen extends State<MyHomeScreen> {
                               onPressed: () {},
                               child: Image.asset(
                                 'assets/favoriteServices/member-card.png',
-                                width: size.width * 0.33 * 0.33,
-                                height: size.width * 0.33 * 0.33,
+                                width: size.width * 0.3 * 0.33,
+                                height: size.width * 0.3 * 0.33,
                                 color: Colors.white,
                               ),
                               style: ElevatedButton.styleFrom(
@@ -293,7 +303,7 @@ class HomeScreen extends State<MyHomeScreen> {
                               text: TextSpan(
                                 text: 'Thẻ\n',
                                 style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: 12,
                                   fontWeight: FontWeight.w400,
                                   color: Colors.black,
                                 ),
@@ -313,8 +323,8 @@ class HomeScreen extends State<MyHomeScreen> {
                               onPressed: () {},
                               child: Image.asset(
                                 'assets/favoriteServices/hotline.png',
-                                width: size.width * 0.33 * 0.33,
-                                height: size.width * 0.33 * 0.33,
+                                width: size.width * 0.3 * 0.33,
+                                height: size.width * 0.3 * 0.33,
                               ),
                               style: ElevatedButton.styleFrom(
                                 shape: CircleBorder(),
@@ -331,7 +341,7 @@ class HomeScreen extends State<MyHomeScreen> {
                               text: TextSpan(
                                 text: 'Tổng đài\n',
                                 style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: 12,
                                   fontWeight: FontWeight.w400,
                                   color: Colors.black,
                                 ),
@@ -358,8 +368,8 @@ class HomeScreen extends State<MyHomeScreen> {
                               onPressed: () {},
                               child: Image.asset(
                                 'assets/favoriteServices/chat-online.png',
-                                width: size.width * 0.33 * 0.33,
-                                height: size.width * 0.33 * 0.33,
+                                width: size.width * 0.3 * 0.33,
+                                height: size.width * 0.3 * 0.33,
                               ),
                               style: ElevatedButton.styleFrom(
                                 shape: CircleBorder(),
@@ -376,7 +386,7 @@ class HomeScreen extends State<MyHomeScreen> {
                               text: TextSpan(
                                 text: 'Tư vấn\n',
                                 style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: 12,
                                   fontWeight: FontWeight.w400,
                                   color: Colors.black,
                                 ),
@@ -396,8 +406,8 @@ class HomeScreen extends State<MyHomeScreen> {
                               onPressed: () {},
                               child: Image.asset(
                                 'assets/favoriteServices/medical-book.png',
-                                width: size.width * 0.33 * 0.33,
-                                height: size.width * 0.33 * 0.33,
+                                width: size.width * 0.3 * 0.33,
+                                height: size.width * 0.3 * 0.33,
                                 color: Colors.white,
                               ),
                               style: ElevatedButton.styleFrom(
@@ -415,7 +425,7 @@ class HomeScreen extends State<MyHomeScreen> {
                               text: TextSpan(
                                 text: 'Thư viện\n',
                                 style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: 12,
                                   fontWeight: FontWeight.w400,
                                   color: Colors.black,
                                 ),
@@ -443,7 +453,7 @@ class HomeScreen extends State<MyHomeScreen> {
                   'Danh mục sản phẩm',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
-                    fontSize: 20.0,
+                    fontSize: 18.0,
                   ),
                 ),
               ),
@@ -481,6 +491,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                     style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.w400,
+                                      fontSize: 12,
                                     ),
                                   ),
                                 ),
@@ -512,6 +523,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                     style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.w400,
+                                      fontSize: 12,
                                     ),
                                   ),
                                 ),
@@ -547,6 +559,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                     style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.w400,
+                                      fontSize: 12,
                                     ),
                                   ),
                                 ),
@@ -577,6 +590,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                     style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.w400,
+                                      fontSize: 12,
                                     ),
                                   ),
                                 ),
@@ -612,6 +626,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                     style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.w400,
+                                      fontSize: 12,
                                     ),
                                   ),
                                 ),
@@ -643,6 +658,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                     style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.w400,
+                                      fontSize: 12,
                                     ),
                                   ),
                                 ),
@@ -678,6 +694,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                     style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.w400,
+                                      fontSize: 12,
                                     ),
                                   ),
                                 ),
@@ -709,6 +726,7 @@ class HomeScreen extends State<MyHomeScreen> {
                                     style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.w400,
+                                      fontSize: 12,
                                     ),
                                   ),
                                 ),
@@ -731,14 +749,14 @@ class HomeScreen extends State<MyHomeScreen> {
                   'Chỉ có tại Pharmacity',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
-                    fontSize: 20.0,
+                    fontSize: 18.0,
                   ),
                 ),
               ),
               SizedBox(height: _edgeInsertTB),
               Container(
                 margin: EdgeInsets.only(left: _edgeInsertLR),
-                height: size.height * 0.415,
+                height: size.height * 0.405,
 
                 child: ListView.separated(
                   shrinkWrap: true,
@@ -763,14 +781,14 @@ class HomeScreen extends State<MyHomeScreen> {
                   'Săn deal giá rẻ - bảo vệ sức khỏe',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
-                    fontSize: 20.0,
+                    fontSize: 18.0,
                   ),
                 ),
               ),
               SizedBox(height: _edgeInsertTB),
               Container(
                 margin: EdgeInsets.only(left: _edgeInsertLR),
-                height: size.height * 0.43,
+                height: size.height * 0.42,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   itemCount: _detailHotSaleList.length,
@@ -795,7 +813,7 @@ class HomeScreen extends State<MyHomeScreen> {
                       'Thương hiệu nổi bật',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 20.0,
+                        fontSize: 18.0,
                       ),
                     ),
                     Spacer(),

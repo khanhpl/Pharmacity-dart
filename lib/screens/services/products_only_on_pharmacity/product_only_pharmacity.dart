@@ -17,8 +17,9 @@ class PharmacityProductOnly extends StatelessWidget {
     var _pageHeight = MediaQuery.of(context).size.height;
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey),
+        border: Border.all(color: Colors.grey.shade200),
         borderRadius: BorderRadius.circular(15),
+
       ),
       width: _pageWidth * 0.45,
       child: TextButton(
@@ -115,23 +116,24 @@ class PharmacityProductOnly extends StatelessWidget {
             ),
             SizedBox(height: _pageHeight * 0.02),
             Container(
-              height: _pageHeight * 0.04,
+              height: _pageHeight * 0.03,
               child: RichText(
                 text: TextSpan(
                   style: TextStyle(
-                    fontSize: _pageHeight * 0.025,
-                    color: Colors.red.shade700,
+                    fontSize: _pageHeight * 0.023,
+                    color: Colors.red.shade600,
                   ),
                   children: <TextSpan>[
                     TextSpan(
                         text: product.price + ' VND',
                         style: TextStyle(fontWeight: FontWeight.bold)),
                     TextSpan(
-                        text: '/cái!',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: _pageHeight * 0.022,
-                        )),
+                      text: '/cái!',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: _pageHeight * 0.022,
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -145,16 +147,16 @@ class PharmacityProductOnly extends StatelessWidget {
               ),
               child: TextButton(
                 style: TextButton.styleFrom(
-                  backgroundColor: Colors.green.shade700,
+                  backgroundColor: Colors.green.shade600,
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
+                    borderRadius: BorderRadius.circular(10.0),
                   ),
                 ),
                 onPressed: () {},
                 child: Text(
                   'Thêm vào giỏ hàng',
                   style: TextStyle(
-                    fontSize: _pageHeight * 0.045 * 0.3,
+                    fontSize: _pageHeight * 0.045 * 0.35,
                     color: Colors.white,
                     fontWeight: FontWeight.w400,
                   ),
