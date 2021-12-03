@@ -873,12 +873,14 @@ Widget CaroselImage = Center(
       AssetImage('assets/slide4.webp'),
       AssetImage('assets/slide5.webp'),
     ],
+
     autoplay: true,
     dotSize: 5,
     dotSpacing: 30,
     indicatorBgPadding: 0,
     autoplayDuration: Duration(seconds: 5),
     borderRadius: true,
-    dotBgColor: Colors.black.withOpacity(0),
+    dotBgColor: Colors.black.withOpacity(0.0),
+
   ),
 );
