@@ -15,6 +15,11 @@ class _DetailState extends State<Detail> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    var _edgeInsertLR = MediaQuery.of(context).size.width * 0.03;
+    var _edgeInsertTB = MediaQuery.of(context).size.height * 0.03;
+
+    var _pageWidth = MediaQuery.of(context).size.width;
+    var _pageHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(
@@ -29,7 +34,7 @@ class _DetailState extends State<Detail> {
           },
           child: Container(
             height: size.height * 0.05,
-            width: size.width * 0.2,
+            width: size.width * 0.3,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/pharmacitybrand.png'),
@@ -53,32 +58,31 @@ class _DetailState extends State<Detail> {
         child: Row(
           children: <Widget>[
             Container(
-              height: size.height * 0.1,
+              height: size.height * 0.07,
               width: size.width * 0.4,
-              margin: EdgeInsets.only(left: size.width*0.07),
+              margin: EdgeInsets.only(left: size.width * 0.07),
               decoration: BoxDecoration(
                 color: Colors.grey[200],
                 borderRadius: BorderRadius.circular(15.0),
-                border: Border.all(color: Colors.blue),
+                border: Border.all(color: Theme.of(context).primaryColor),
               ),
               child: TextButton(
                 onPressed: () {},
                 child: Text(
                   'Mua ngay',
                   style: TextStyle(
-                    color: Colors.blue,
+                    color: Theme.of(context).primaryColor,
                   ),
                 ),
               ),
             ),
             Expanded(
               child: Container(
-                height: size.height * 0.1,
+                height: size.height * 0.07,
                 // width: 190,
-                margin: EdgeInsets.only(left: size.width*0.05),
+                margin: EdgeInsets.only(left: size.width * 0.05),
                 decoration: BoxDecoration(
-
-                  color: Colors.green,
+                  color: Colors.green.shade600,
                   borderRadius: BorderRadius.circular(15.0),
                   border: Border.all(color: Colors.green),
                 ),
@@ -88,9 +92,9 @@ class _DetailState extends State<Detail> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Container(
-                        child: Icon(Icons.shopping_cart_outlined, color: Colors.white),
+                        child: Icon(Icons.shopping_cart_outlined,
+                            color: Colors.white),
                       ),
-
                       Container(
                         child: Text(
                           'Thêm vào giỏ hàng',
@@ -109,7 +113,8 @@ class _DetailState extends State<Detail> {
         ),
       ),
       body: Container(
-        margin: EdgeInsets.only(left: size.width*0.05, right: size.width*0.05),
+        margin:
+            EdgeInsets.only(left: size.width * 0.05, right: size.width * 0.05),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
@@ -125,34 +130,78 @@ class _DetailState extends State<Detail> {
                   ),
                 ),
               ),
+
+              SizedBox(height: _edgeInsertTB*0.5),
               Container(
-                width: 130.0,
-                height: 30.0,
+                height: _pageHeight * 0.06,
                 alignment: Alignment.centerLeft,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5.0),
-                  color: Colors.grey[200],
-                  image: DecorationImage(
-                    image: AssetImage(widget.product.brand),
-                    alignment: Alignment.centerRight,
-                  ),
-                ),
-                child: Text(
-                  'Thương hiệu',
-                  style: TextStyle(
-                    fontSize: 13.0,
-                    color: Colors.grey,
-                  ),
+                child: Row(
+                  children: [
+                    Container(
+                      height: _pageHeight * 0.06,
+                      width: _edgeInsertLR ,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            bottomLeft: Radius.circular(10)),
+                        color: Color.fromRGBO(185, 223, 255, 1),
+                      ),
+                    ),
+                    Container(
+                      height: _pageHeight * 0.06,
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(185, 223, 255, 1),
+                      ),
+                      alignment: Alignment.center,
+                      child: Text(
+                        'Thương hiệu',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.black45,
+                          fontWeight: FontWeight.w400,
+                          fontSize: _pageHeight * 0.06 * 0.4,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: _pageHeight * 0.06,
+                      width: _edgeInsertLR ,
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(185, 223, 255, 1),
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(185, 223, 255, 1),
+                      ),
+                      child: Image.asset(
+                        widget.product.brand,
+                        height: _pageHeight * 0.06,
+                        width: _pageWidth * 0.2,
+                      ),
+                    ),
+                    Container(
+                      height: _pageHeight * 0.06,
+                      width: _edgeInsertLR,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(10),
+                            bottomRight: Radius.circular(10)),
+                        color: Color.fromRGBO(185, 223, 255, 1),
+                      ),
+                    ),
+                  ],
                 ),
               ),
+              SizedBox(height: _edgeInsertTB),
               Text(
                 widget.product.name,
                 style: TextStyle(
                   fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
-              SizedBox(height: 10.0),
+              SizedBox(height: _edgeInsertTB*0.5),
               Text(
                 widget.product.price + ' VND',
                 style: TextStyle(

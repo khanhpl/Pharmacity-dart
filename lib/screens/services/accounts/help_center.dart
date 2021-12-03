@@ -12,12 +12,14 @@ class _MyHelpCenterState extends State<MyHelpCenter> {
   Widget build(BuildContext context) {
     var _pageHeight = MediaQuery.of(context).size.height;
     var _pageWidth = MediaQuery.of(context).size.width;
+
+    var _themeColor = Theme.of(context).primaryColor;
     return DefaultTabController(
       initialIndex: 0,
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.blue[700],
+          backgroundColor: _themeColor,
           centerTitle: true,
           title: Text(
             'Trung tâm trợ giúp',
@@ -37,7 +39,7 @@ class _MyHelpCenterState extends State<MyHelpCenter> {
         body: Material(
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.blue[700],
+              color: _themeColor,
             ),
             child: Container(
               decoration: BoxDecoration(

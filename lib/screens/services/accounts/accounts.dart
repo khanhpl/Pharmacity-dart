@@ -9,9 +9,11 @@ class Account extends StatelessWidget {
 
     var _edgeInsertLR = MediaQuery.of(context).size.width * 0.03;
     var _edgeInsertTB = MediaQuery.of(context).size.height * 0.03;
+
+    var _themeColor = Theme.of(context).primaryColor;
     return Container(
       decoration: BoxDecoration(
-        color: Colors.blue[700],
+        color: _themeColor,
       ),
       child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -20,39 +22,45 @@ class Account extends StatelessWidget {
             SizedBox(height: _edgeInsertTB * 2),
             Container(
               width: _pageWidth,
-              height: _pageHeight * 0.23,
               margin: EdgeInsets.fromLTRB(_edgeInsertLR, 0, _edgeInsertLR, 0),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(15),
               ),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  SizedBox(height: _edgeInsertTB * 0.5),
                   Container(
-                    height: _pageHeight * 0.2 * 0.3,
                     child: Text(
                       'Bạn chưa đăng nhập',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
+                        fontSize: _pageHeight * 0.019,
                       ),
                     ),
                     alignment: Alignment.centerLeft,
                     margin: EdgeInsets.only(left: _edgeInsertLR),
                   ),
+                  SizedBox(height: _edgeInsertTB * 0.8),
                   Container(
-                    height: _pageHeight * 0.2 * 0.3,
                     child: Text(
-                        'Hãy đăng nhập để được hưởng các đặc quyền riêng dành cho thành viên'),
+                      'Hãy đăng nhập để được hưởng các đặc quyền riêng dành cho thành viên',
+                      style: TextStyle(
+                        fontSize: _pageHeight * 0.019,
+                      ),
+                    ),
                     alignment: Alignment.centerLeft,
                     margin: EdgeInsets.only(left: _edgeInsertLR),
                   ),
+                  SizedBox(height: _edgeInsertTB * 0.8),
                   Container(
                     child: ElevatedButton(
                       child: Text(
                         'Đăng nhập ngay ',
                         style: TextStyle(
                           color: Colors.white,
+                          fontSize: _pageHeight * 0.019,
                         ),
                       ),
                       style: ButtonStyle(
@@ -70,9 +78,11 @@ class Account extends StatelessWidget {
                       },
                     ),
                     width: _pageWidth,
+                    height: _pageHeight * 0.06,
                     margin:
                         EdgeInsets.fromLTRB(_edgeInsertLR, 0, _edgeInsertLR, 0),
                   ),
+                  SizedBox(height: _edgeInsertTB * 0.5),
                 ],
               ),
             ),
@@ -95,12 +105,19 @@ class Account extends StatelessWidget {
                       child: Row(
                         children: [
                           Container(
-                            child: Icon(Icons.album),
+                            child: ImageIcon(
+                              AssetImage(
+                                  'assets/accounts/src_assets_icons_icmember.png'),
+                            ),
                             width: _pageWidth * 0.1,
                           ),
                           Container(
                             child:
-                                Text('Quy chế xếp hạng thành viên ExtraCare'),
+                                Text('Quy chế xếp hạng thành viên ExtraCare',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
                           ),
                           Expanded(
                             child: Container(
@@ -133,11 +150,18 @@ class Account extends StatelessWidget {
                       child: Row(
                         children: [
                           Container(
-                            child: Icon(Icons.help_center_outlined),
+                            child: ImageIcon(
+                              AssetImage(
+                                  'assets/accounts/question.png'),
+                            ),
                             width: _pageWidth * 0.1,
                           ),
                           Container(
-                            child: Text('Trung tâm trợ giúp'),
+                            child: Text('Trung tâm trợ giúp',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
                           ),
                           Expanded(
                             child: Container(
@@ -164,11 +188,18 @@ class Account extends StatelessWidget {
                       child: Row(
                         children: [
                           Container(
-                            child: Icon(Icons.settings_applications_sharp),
+                            child: ImageIcon(
+                              AssetImage(
+                                  'assets/accounts/setting.png'),
+                            ),
                             width: _pageWidth * 0.1,
                           ),
                           Container(
-                            child: Text('Cài đặt'),
+                            child: Text('Cài đặt',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
                           ),
                           Expanded(
                             child: Container(
@@ -208,7 +239,11 @@ class Account extends StatelessWidget {
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                Text('Tư vấn đặt hàng'),
+                                Text('Tư vấn đặt hàng',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
                               ],
                             ),
                           )

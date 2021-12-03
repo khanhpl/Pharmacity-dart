@@ -33,7 +33,8 @@ class _ProductListState extends State<ProductList> {
   List<Product> list_chamsocsuckhoe = [
     Product(image: 'assets/xemtatca.jpg', name: 'Xem tất cả'),
     Product(image: 'assets/duocmypham.jpg', name: 'Dược mỹ phẩm'),
-    Product(image: 'assets/thucphamdinhduong.jpg', name: 'Thực phẩm dinh dưỡng'),
+    Product(
+        image: 'assets/thucphamdinhduong.jpg', name: 'Thực phẩm dinh dưỡng'),
     Product(image: 'assets/dungcusocuu.jpg', name: 'Dụng cụ sơ cứu'),
     Product(image: 'assets/kehoachgiadinh.jpg', name: 'Kế hoạch gia đình'),
     Product(image: 'assets/chamsocmattaimui.jpg', name: 'Chăm sóc Mắt/Tai/Mũi'),
@@ -65,12 +66,16 @@ class _ProductListState extends State<ProductList> {
     Product(image: 'assets/nhomduonghuyet.png', name: 'TPCN Nhóm đường huyết'),
     Product(image: 'assets/nhomhohap.png', name: 'TPCN Nhóm hô hấp'),
     Product(image: 'assets/nhomthankinh.png', name: 'TPCN Nhóm thần kinh'),
-    Product(image: 'assets/nhomcoxuongkhop.png', name: 'TPCN Nhóm cơ xương khớp'),
+    Product(
+        image: 'assets/nhomcoxuongkhop.png', name: 'TPCN Nhóm cơ xương khớp'),
     Product(image: 'assets/nhomgiamcan.jpg', name: 'TPCN Giảm cân'),
-    Product(image: 'assets/nhomchamsocsacdep.png', name: 'TPCN Chăm sóc sắc đẹp'),
-    Product(image: 'assets/nhomchamsocsuckhoenamnu.jpg', name: 'TPCN Chăm sóc sức khỏe nam va nữ '),
+    Product(
+        image: 'assets/nhomchamsocsacdep.png', name: 'TPCN Chăm sóc sắc đẹp'),
+    Product(image: 'assets/nhomchamsocsuckhoenamnu.jpg',
+        name: 'TPCN Chăm sóc sức khỏe nam va nữ '),
     Product(image: 'assets/nhommattaimui.png', name: 'TPCN Nhóm Mắt/Tai/Mũi'),
-    Product(image: 'assets/nhomvitamin.png', name: 'TPCN Vitamin tổng hợp và khoáng chất'),
+    Product(image: 'assets/nhomvitamin.png',
+        name: 'TPCN Vitamin tổng hợp và khoáng chất'),
     Product(image: 'assets/nhomchamsoctoc.png', name: 'TPCN Chăm sóc tóc'),
     Product(image: 'assets/nhomkhac.png', name: 'TPCN Nhóm khác'),
     Product(image: 'assets/nhomchogan.png', name: 'TPCN Cho gan'),
@@ -80,7 +85,8 @@ class _ProductListState extends State<ProductList> {
     Product(image: 'assets/chamsocembe.png', name: 'chăm sóc em bé'),
     Product(image: 'assets/mevabe.png', name: 'TPCN dành cho trẻ em'),
     Product(image: 'assets/sanphamdanhchome.png', name: 'Sản phẩm dành cho mẹ'),
-    Product(image: 'assets/danhchophunumangthai.png', name: 'TPCN dành cho phụ nữ mang thai')
+    Product(image: 'assets/danhchophunumangthai.png',
+        name: 'TPCN dành cho phụ nữ mang thai')
   ];
   List<Product> list_chamsocsacdep = [
     Product(image: 'assets/xemtatca.jpg', name: 'Xem tất cả'),
@@ -100,111 +106,124 @@ class _ProductListState extends State<ProductList> {
   @override
   Widget build(BuildContext context) {
     // int _selectedIndex = 1;
-    Size size = MediaQuery.of(context).size;
+    Size size = MediaQuery
+        .of(context)
+        .size;
+    var _pageWidth = MediaQuery.of(context).size.width;
+    var _pageHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        // toolbarHeight: size.height * 0.15,
-        backgroundColor: Theme.of(context).primaryColor,
-        title: Container(
-          height: 40,
-          margin: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0),
-          padding: EdgeInsets.fromLTRB(0, 5.0, 0, 5.0),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10.0),
-          ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              IconButton(
-                alignment: Alignment.center,
-                iconSize: 30.0,
-                color: Colors.grey[400],
-                icon: Icon(Icons.search),
-                onPressed: () {},
+        backgroundColor: Theme
+            .of(context)
+            .primaryColor,
+
+        toolbarHeight: _pageHeight * 0.1,
+        title: Row(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
               ),
-              Expanded(
-                child: Text(
-                  'Tìm trên Pharmacity',
-                  style: TextStyle(
-                    color: Colors.black26,
-                    fontSize: 16.0,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ],
-          ),
-        ),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(FontAwesome.basket),
-            onPressed: () {
-              Navigator.pushNamed(context, '/shoppingCart');
-            },
-          ),
-        ],
-      ),
-      body: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Container(
-            width: size.width * 0.30,
-            child: ListView.separated(
-                itemCount: list.length,
-                separatorBuilder: (BuildContext context, int index) {
-                  return SizedBox();
-                },
-                itemBuilder: (BuildContext context, int index) {
-                  return GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        _selectedIndex = index;
-                        _pageController.jumpToPage(index);
-                      });
-                    },
-                    child: Row(
-                      children: <Widget>[
-                        Expanded(
-                          child: SpecificTab(image: list[index].image, name: list[index].name),
-                        ),
-                        AnimatedContainer(
-                          duration: Duration(milliseconds: 100),
-                          color: Theme.of(context).primaryColor,
-                          height: (_selectedIndex == index) ? size.height * 0.17 : 0,
-                          width: (_selectedIndex == index) ? 2.5 : 0,
-                        ),
-                      ],
+              width: _pageWidth * 0.82,
+              height: _pageHeight * 0.05,
+              child: Row(
+                children: [
+                  Container(
+                    child: Icon(
+                      Icons.search,
+                      color: Colors.grey.shade400,
                     ),
-                  );
-                }),
-          ),
-          Expanded(
-            child: Container(
-              child: PageView(
-                controller: _pageController,
-                physics: NeverScrollableScrollPhysics(),
-                children: <Widget>[
-                  SpecificPage(list: list_pharmacity),
-                  SpecificPage(list: list_duocpham),
-                  SpecificPage(list: list_chamsocsuckhoe),
-                  SpecificPage(list: list_chamsoccanhan),
-                  SpecificPage(list: list_sanphamtienloi),
-                  SpecificPage(list: list_thucphamchucnang),
-                  SpecificPage(list: list_mevabe),
-                  SpecificPage(list: list_chamsocsacdep),
-                  SpecificPage(list: list_thietbiyte),
+                    margin: EdgeInsets.only(left: 10),
+                  ),
+                  Expanded(
+                    child: Container(
+                      child: TextField(
+                        decoration: InputDecoration.collapsed(
+                          hintText: 'Tìm trên Pharmacity',
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
-          ),
-        ],
+            Container(
+              width: _pageWidth * 0.08,
+              child: IconButton(
+                icon: Icon(FontAwesome.basket),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/shoppingCart');
+                },
+              ),
+            ),
+          ],
+        ),
       ),
-      // floatingActionButton: IconButton(
-      //   icon: Icon(Icons.shopping_cart_outlined),
-      //   onPressed: () {},
-      //   color: Colors.blue,
-      // ),
+      body: Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Container(
+          width: size.width * 0.30,
+          child: ListView.separated(
+              itemCount: list.length,
+              separatorBuilder: (BuildContext context, int index) {
+                return SizedBox();
+              },
+              itemBuilder: (BuildContext context, int index) {
+                return GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      _selectedIndex = index;
+                      _pageController.jumpToPage(index);
+                    });
+                  },
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: SpecificTab(
+                            image: list[index].image, name: list[index].name),
+                      ),
+                      AnimatedContainer(
+                        duration: Duration(milliseconds: 100),
+                        color: Theme
+                            .of(context)
+                            .primaryColor,
+                        height: (_selectedIndex == index)
+                            ? size.height * 0.17
+                            : 0,
+                        width: (_selectedIndex == index) ? 2.5 : 0,
+                      ),
+                    ],
+                  ),
+                );
+              }),
+        ),
+        Expanded(
+          child: Container(
+            child: PageView(
+              controller: _pageController,
+              physics: NeverScrollableScrollPhysics(),
+              children: <Widget>[
+                SpecificPage(list: list_pharmacity),
+                SpecificPage(list: list_duocpham),
+                SpecificPage(list: list_chamsocsuckhoe),
+                SpecificPage(list: list_chamsoccanhan),
+                SpecificPage(list: list_sanphamtienloi),
+                SpecificPage(list: list_thucphamchucnang),
+                SpecificPage(list: list_mevabe),
+                SpecificPage(list: list_chamsocsacdep),
+                SpecificPage(list: list_thietbiyte),
+              ],
+            ),
+          ),
+        ),
+      ],
+    ),// floatingActionButton: IconButton(
+    //   icon: Icon(Icons.shopping_cart_outlined),
+    //   onPressed: () {},
+    //   color: Colors.blue,
+    // ),
     );
   }
 }
@@ -216,7 +235,9 @@ class SpecificPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    Size size = MediaQuery
+        .of(context)
+        .size;
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
@@ -237,7 +258,9 @@ class SpecificTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    Size size = MediaQuery
+        .of(context)
+        .size;
     return Container(
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey),
@@ -279,7 +302,9 @@ class SpecificItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    Size size = MediaQuery
+        .of(context)
+        .size;
     return Container(
       margin: EdgeInsets.all(10.0),
       decoration: BoxDecoration(
